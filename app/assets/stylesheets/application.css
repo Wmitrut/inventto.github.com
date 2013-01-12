@@ -1,0 +1,137 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Anton'), url('http://themes.googleusercontent.com/static/fonts/anton/v3/tilmJBBU81h1G7ZsdY3Hmw.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
+}
+* {
+color:white;
+font:12px "Open Sans", Verdana, Arial;
+}
+body {
+background-color:rgb(150, 150, 150);
+margin:0 0 100px;
+}
+#head {
+background-color:#000;
+height:95px
+}
+.fix_width {
+margin:0 auto;
+max-width:940px
+}
+#logo {
+color:rgb(10, 200, 40);
+font:60px "Anton", Verdana, Arial;
+padding:5px 0;
+}
+#logo a {
+font:60px "Anton", Verdana, Arial;
+}
+#menu {
+margin-top:45px;
+float:right
+}
+#menu ul li {
+float:left;
+list-style:none;
+margin: 0 0 0 20px;
+}
+#menu ul li a {
+font:14px "Open Sans", Verdana, Arial;
+text-decoration:none;
+cursor:pointer;
+}
+#menu ul li a:hover {
+color:rgb(10, 200, 40);
+}
+#body {
+margin: 20px auto;
+background-color: rgb(100, 100, 100);
+padding: 20px;
+}
+.container {
+background: rgb(50, 50, 50);
+padding: 20px;
+}
+#body .container {
+background: rgb(50, 50, 50) url(img/diagonal.png) top right no-repeat;
+}
+.extended {
+display:block;
+padding:20px;
+margin:20px 0;
+position:absolute;
+left: 0;
+right: 0;
+background-color:black;
+clear:both;
+border-top: 2px solid rgb(10, 200, 40);
+border-bottom: 2px solid rgb(10, 200, 40);
+}
+.extended .fix_width {
+max-width:900px
+}
+.right_info {
+font:15px "Anton", Verdana, Arial;
+padding:20px 20px 40px;
+float:right;
+background-color: rgb(50, 50, 50);
+margin: -20px -20px -20px 20px;
+height:100%;
+}
+.left_info {
+font:30px "Anton", Verdana, Arial;
+padding:20px;
+float:left;
+margin: -20px 20px -20px -20px;
+height:100%;
+}
+.left_info a,
+.right_info a {
+font:30px "Anton", Verdana, Arial;
+color:rgb(10, 200, 40);
+display:block
+}
+.side {
+width:270px;
+float:left;
+padding:20px;
+}
+.title {
+font:30px "Anton", Verdana, Arial;
+color:rgb(10, 200, 40);
+border-bottom: 1px solid white;
+}
+.container .title {
+color:white;
+}
+#footer {
+background-color:
+}
+i {
+display:block;
+clear:both
+}
+.container .extended {
+border:none;
+}

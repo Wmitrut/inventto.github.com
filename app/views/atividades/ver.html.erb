@@ -1,0 +1,22 @@
+<h1>Atividades de hoje</h1>
+<ul>
+  <% Atividade.all.group_by(&:projeto).each do |projeto, atividades| %>
+    <li>
+    <%= projeto.nome %>
+    <ol>
+      <% atividades.each do |atividade| %>
+        <li>
+        <%= atividade.descricao %>
+        <ul>
+          <% atividade.horas.each do |hora| %>
+            <li>
+            <%= hora.programador.nome %> <%= hora.quantas %>
+            </li>
+          <% end %>
+        </ul>
+        </li>
+      <% end %>
+    </ol>
+    </li>
+  <% end %>
+</ul>

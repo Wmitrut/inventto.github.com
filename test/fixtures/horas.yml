@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  atividade: 
+  programador: 
+  quantas: 9.99
+
+two:
+  atividade: 
+  programador: 
+  quantas: 9.99
