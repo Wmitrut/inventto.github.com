@@ -1,0 +1,148 @@
+HOME
+
+Invent.to é uma equipe de desenvolvimento de sistemas computacionais, que possui habilidades para desenvolvimento de uma ampla gama de soluções, incluindo software para o mercado financeiro, aplicativos móveis Android, sites e sistemas para internet.
+
+Somos uma equipe de profissionais de TI altamente qualificados, experientes, capazes de gerenciar projetos com autonomia e responsabilidade.
+
+Nossa equipe inclui especialistas em Java, Ruby, Android, Web, C, trabalhando com a metodologia XP (eXtreme Programming) desenvolvendo produtos de qualidade e *livre de erros* (o trabalho em dupla .....).
+
+Acreditamos em transformar seus invent.tos em um negócio lucrativo, adicionando valores a ele.
+
+	Desafio, inovação?
+	Entre em contato.
+
+
+
+
+
+
+
+
+
+
+Invent.tores - Equipe
+
+Jônatas Davi Paganini - 
+
+Marlon Henrique Scalabrin - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fluxo de desenvolvimento - Como trabalhamos?
+
+Vivenciamos uma das principais práticas da metodologia XP: /pair-programming/.
+O desenvolvimento em dupla aumenta a produtividade e comprometimento da equipe.
+
+Usuamente trabalhamos com um computador e dois teclados.
+Acreditamos que o desenvolvimento é uma atividade que exige muita concentração e percebemos que somos muito mais produtivos quando resolvemos um problema complexo juntos, buscando a melhor solução para um determinado problema.
+Quando os problemas se tornam simples ou tarefas que não exigem a atenção de mais de uma pessoa nos focamos em problemas diferentes, trabalhando em dois computadores.
+
+Dividimos nosso dia de trabalho para o desenvolvimento de 2 projetos distintos, trabalhando até 4 horas diárias por projeto. Sendo assim, cada programador trabalhando aproximadamente 90 horas mensais em cada projeto.
+
+Trabalhamos com projetos em escopo aberto. Desenvolvemos uma confiança com nossos clientes onde cobramos apenas pelas horas de desenvolvimento. As etapas do projeto ficam por conta da evolução natural do sistema, conforme as prioridades estabelecidas semanalmente e/ou diariamente. Não existem entregas formais, de forma que o cliente acompanha o desenvolvimento etapa a etapa. Desta forma, o trabalho se torna palpável, a transparência serviço traz ao cliente a confiança e certeza do desenvolvimento continuo.
+
+Recebemos no modelo pré-pago, logo os projetos são alocados na agenda conforme os pagamentos realizados.
+Os créditos adquiridos possuem prazo de validade de 3 meses após a data do pagamento.
+Será permitido acúmulo de créditos de no máximo 270 horas por programador.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Clientes e Empresas Parceiras?
+### TODO: enviar e-mails com links para todos, solucitando informações, logo e direcinamento para os produtos.
+
+- Thessaur Invest
+Nosso primeiro projeto de sucesso totalmente a distância. Apesar da empresa estar situada em Foz do Iguaçu - PR (aproximadamente 300km), não nos conhecemos pessoalmente. Todos os contatos forma realizados através de ligações skype/telefone. E também utilizamos assistência remota para publicar a versão e prestar suporte. 
+
+- Executive
+A Executive é uma empresa parceira que desenvolve robôs personalizados para o mercado financeiro.
+#Também estamos participando do desenvolvimento de um produto "Top Secret".
+
+- Leosoft
+ * Agecel android
+ * TopSecret
+ * Consultorias específicas
+
+- Academia Vida Mais Ativa
+ * Personal Trainer
+
+- Audiobrax
+ * Pad for Android
+
+
+
+Invent.tos - Sistemas desenvolvidos
+
+Camera Overlay - Invent.to
+
+
+Robô de Investimento - Thessaur
+Devido ao fato da distância alguns problemas foram enfrentados devido diferenças entre os ambientes de desenvolvimento e produção. Mas logo os problemas foram sanados.
+
+
+Personal Trainer Integrado - Invent.to parceria com Academia Vida Mais Ativa
+
+
+
+
+
+
+
+
+
+O que fazemos?
+- Desenvolvimento Ruby, Java, Android, C, HTML, CSS, JavaScript
+- Estratégias de investimento automatizadas para o mercado financeiro
+	- Backtest
+	- Codificação de sinais e indicadores
+	- Roteamento de ordens integrado ao Protocolo FIX
+	- Estratégias de roteamento
+	- Recebimento de preços do mercado (market data)
+	- Geração e tratamento de ticks
+	- Otimização e melhoria contínua em estratégias existentes
+- Aplicativos para dispositivos Android
+- Sistemas para internet (Ruby on Rails, JEE, etc)
+- Serviços web (SOA, REST, etc)
+- Banco de Dados (Postgresql, MySQL)
+	- PL/SQL
+- Testes automatizados (Cucumber, rspec, JUnit)
+- Especificação e criação de modelos de negócio
+- Documentação de software
+- P&D (pesquisa e desenvolvimento)
+	- Estudo de novas tecnologias
+- Integração com hardware e periféricos (Arduino, MicroChip®, etc)
+	- Desenvolvimento e integração de módulos simples
+- Inteligência Computacional
+	- Datamining
+	- Métodos e técnicas de otimização
+	- Redes neurais
+- Aplicações de processamento paralelo/complexo (Threads, CEP, MPI e CUDA)
+- Consultorias e Palestras
+
+
+
+O que não fazemos?
+- Configuração e instalação de sistemas operacionais
+- Setup de firewall e ambientes complexos de rede
+- Manutenção em sistemas legados que o mundo não precisa mais :D
+- Sistemas chatos, copiar ideias, ou coisas ilegais
