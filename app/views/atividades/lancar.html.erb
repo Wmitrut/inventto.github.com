@@ -14,10 +14,10 @@
   <textarea id="descricao" name="atividade[descricao]" size="100" ></textarea>
   <br />
   <h2>Equipe</h2>
-  <%= select_tag "programador_1", programadores_option(Programador.all.first.id) %>
+  <%= select_tag "programador_1", programadores_option(p=Programador.all.first ? p.id : nil) %>
   <input type="text" name="atividade[horas_1]" />
   <br />
-  <%= select_tag "programador_2", programadores_option(Programador.all.second.id) %>
+  <%= select_tag "programador_2", programadores_option(p=Programador.all.second ? p.id : nil) %>
   <input type="text" name="atividade[horas_2]" />
   <br />
    <input type="submit" value="Salvar" />
