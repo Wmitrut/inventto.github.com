@@ -7,7 +7,7 @@ InventtoSite::Application.routes.draw do
 
   get "projetos/new"
 
-  get "atividades/ver"
+  post "atividades/ver"
 
   get "atividades/lancar"
   post "atividades/create"
