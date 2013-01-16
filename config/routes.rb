@@ -1,7 +1,9 @@
 InventtoSite::Application.routes.draw do
+  resources :programadores do as_routes end
+
   resources :projetos do as_routes end
 
-  #match ':controller(/:action(/:id))(.:format)'
+#  match ':controller(/:action(/:id))(.:format)'
 
   get "projetos/new"
 
