@@ -14,7 +14,7 @@
     <% @atividades.group_by(&:projeto).each do |projeto, atividades| %>
       <li>
         <%= projeto.nome %> -
-        <%= projeto.cliente.nome %>
+        <%= projeto.cliente.nome rescue ""%> 
       <ol>
         <% atividades.each do |atividade| %>
           <li>
