@@ -1,3 +1,6 @@
 class Cliente < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :nome
+  def label 
+   nome 
+  end
 end
