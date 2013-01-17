@@ -1,4 +1,16 @@
 InventtoSite::Application.routes.draw do
+  resources :clientes do as_routes end
+
+  resources :programadores do as_routes end
+
+  resources :projetos do as_routes end
+
+#  match ':controller(/:action(/:id))(.:format)'
+
+  get "projetos/new"
+
+  post "atividades/ver"
+
   get "atividades/ver"
 
   get "atividades/lancar"
@@ -61,5 +73,4 @@ InventtoSite::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end

@@ -1,22 +1,33 @@
+<label for="projeto">Projeto:</label>
+<form action="/atividades/ver" method="POST">
+  <%= select_tag "cliente", options_from_collection_for_select(Cliente.all, :id, :nome, params[:cliente]),:prompt => "Selecione" %>
+  <%= select_tag "projeto", options_from_collection_for_select(Projeto.all, :id, :nome, params[:projeto]),:prompt => "Selecione" %>
+<input type="submit" value="Filtrar"/>
+</form>
+
 <h1>Atividades de hoje</h1>
 <ul>
-  <% Atividade.all.group_by(&:projeto).each do |projeto, atividades| %>
-    <li>
-    <%= projeto.nome %>
-    <ol>
-      <% atividades.each do |atividade| %>
-        <li>
-        <%= atividade.descricao %>
-        <ul>
-          <% atividade.horas.each do |hora| %>
-            <li>
-            <%= hora.programador.nome %> <%= hora.quantas %>
-            </li>
-          <% end %>
-        </ul>
-        </li>
-      <% end %>
-    </ol>
-    </li>
+  <% if(@atividades.blank?) %>
+    Nenhuma atividade.
+  <%else%>
+    <% @atividades.group_by(&:projeto).each do |projeto, atividades| %>
+      <li>
+      <%= projeto.nome %>
+      <ol>
+        <% atividades.each do |atividade| %>
+          <li>
+          <%= atividade.descricao %>
+          <ul>
+            <% atividade.horas.each do |hora| %>
+              <li>
+              <%= hora.programador.nome %> <%= hora.quantas %>
+              </li>
+            <% end %>
+          </ul>
+          </li>
+        <% end %>
+      </ol>
+      </li>
+    <% end %>
   <% end %>
 </ul>

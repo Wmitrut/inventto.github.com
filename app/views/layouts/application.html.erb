@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>InventtoSite</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<title>InventtoSite</title>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="head">
+  <div class="fix_width">
+    <div id="menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/clientes">Clientes</a></li>
+        <li><a href="/s">Invent.tos</a></li>
+        <li><a href="/res">Invent.tores</a></li>
+        <li><a href="/sobre">Sobre</a></li>
+        <li><a href="/contato">Contato</a></li>
+      </ul>
+    </div>
+    <div id="logo">
+      <a>invent</a>.to
+    </div>
+  </div>
+</div>
+<div id="body" class="fix_width">
+  <%= yield %>
+  <i></i>
+</div>
+<div class="container">
+  <div class="fix_width">
+    <div class="side">
+      <div class="title">Projetos</div>
+    </div>
+    <div class="side">
+      <div class="title">Agenda</div>
+    </div>
+    <div class="side">
+      <div class="title">Contato</div>
+    </div>
+    <i></i>
+  </div>
+  <div class="extended">
+    <div class="fix_width">
+      footer
+    </div>
+  </div>
+</div>
 </body>
 </html>

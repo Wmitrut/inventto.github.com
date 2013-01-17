@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'active_scaffold'
 gem 'brdinheiro'
 gem 'markdown'
 gem 'rdiscount'

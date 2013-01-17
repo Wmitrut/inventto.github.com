@@ -1,5 +1,12 @@
 class AtividadesController < ApplicationController
   def ver
+    if(params[:projeto].blank? and params[:cliente].blank?)
+      @atividades = Atividade.all
+    else if (not params[:projeto].blank?)
+      @atividades = Atividade.find_all_by_projeto_id params[:projeto].to_i
+    else if not params[:cliente].blank?
+      @atividades = Atividade.find_all_by_projeto_id params[:projeto].to_i
+    end
   end
   def lancar
   end
