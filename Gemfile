@@ -5,6 +5,7 @@ gem 'active_scaffold'
 gem 'brdinheiro'
 gem 'markdown'
 gem 'rdiscount'
+gem 'jquery_datepicker'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

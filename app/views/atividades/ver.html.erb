@@ -3,6 +3,10 @@
   <%= select_tag "cliente", options_from_collection_for_select(Cliente.all, :id, :nome, params[:cliente]),:prompt => "Selecione" %>
   <label for="projeto">Projeto:</label>
   <%= select_tag "projeto", options_from_collection_for_select(Projeto.all, :id, :nome, params[:projeto]),:prompt => "Selecione" %>
+  <label for="data_inicial">Data inicial:</label>
+  <%= datepicker_input Atividade,"data_inicial",:dateFormat => "dd/mm/yy",:size => 10%>
+  <label for="data_final">Data final:</label>
+  <%= datepicker_input Atividade,"data_final",:dateFormat => "dd/mm/yy",:size => 10%>
 <input type="submit" value="Filtrar"/>
 </form>
 
