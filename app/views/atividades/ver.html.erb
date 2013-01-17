@@ -1,6 +1,6 @@
 <label for="projeto">Projeto:</label>
 <form action="/atividades/ver" method="POST">
-  <%= select_tag "projeto", options_from_collection_for_select(Projeto.all, :id, :nome),:prompt => "Selecione" %>
+  <%= select_tag "projeto", options_from_collection_for_select(Projeto.all, :id, :nome, params[:projeto]),:prompt => "Selecione" %>
 <input type="submit" value="Filtrar"/>
 </form>
 

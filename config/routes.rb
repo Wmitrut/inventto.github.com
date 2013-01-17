@@ -1,4 +1,6 @@
 InventtoSite::Application.routes.draw do
+  resources :clientes do as_routes end
+
   resources :programadores do as_routes end
 
   resources :projetos do as_routes end
@@ -8,6 +10,8 @@ InventtoSite::Application.routes.draw do
   get "projetos/new"
 
   post "atividades/ver"
+
+  get "atividades/ver"
 
   get "atividades/lancar"
   post "atividades/create"
