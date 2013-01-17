@@ -1,6 +1,7 @@
-<label for="projeto">Projeto:</label>
 <form action="/atividades/ver" method="POST">
+  <label for="cliente">Cliente:</label> 
   <%= select_tag "cliente", options_from_collection_for_select(Cliente.all, :id, :nome, params[:cliente]),:prompt => "Selecione" %>
+  <label for="projeto">Projeto:</label>
   <%= select_tag "projeto", options_from_collection_for_select(Projeto.all, :id, :nome, params[:projeto]),:prompt => "Selecione" %>
 <input type="submit" value="Filtrar"/>
 </form>
@@ -12,7 +13,8 @@
   <%else%>
     <% @atividades.group_by(&:projeto).each do |projeto, atividades| %>
       <li>
-      <%= projeto.nome %>
+        <%= projeto.nome %> -
+        <%= projeto.cliente.nome %>
       <ol>
         <% atividades.each do |atividade| %>
           <li>
