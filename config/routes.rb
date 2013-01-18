@@ -13,6 +13,8 @@ InventtoSite::Application.routes.draw do
 
   get "atividades/ver"
 
+  get "atividades/carregar_projetos"
+
   get "atividades/lancar"
   post "atividades/create"
 
