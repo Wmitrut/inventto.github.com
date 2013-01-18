@@ -4,9 +4,9 @@
   <label for="projeto">Projeto:</label>
   <%= select_tag "projeto", options_from_collection_for_select(Projeto.all, :id, :nome, params[:projeto]),:prompt => "Selecione" %>
   <label for="data_inicial">Data inicial:</label>
-  <%= datepicker_input Atividade,"data_inicial",:dateFormat => "dd/mm/yy",:size => 10%>
+  <%= datepicker_input Atividade,"data_inicial",:dateFormat => "dd/mm/yy",:size => 10 %>
   <label for="data_final">Data final:</label>
-  <%= datepicker_input Atividade,"data_final",:dateFormat => "dd/mm/yy",:size => 10%>
+  <%= datepicker_input Atividade,"data_final",:dateFormat => "dd/mm/yy",:size => 10 %>
 <input type="submit" value="Filtrar"/>
 </form>
 
@@ -18,7 +18,7 @@
     <% @atividades.group_by(&:projeto).each do |projeto, atividades| %>
       <li>
         <%= projeto.nome %> -
-        <%= projeto.cliente.nome rescue ""%> 
+        <%= projeto.cliente.nome rescue "" %> 
       <ol>
         <% atividades.each do |atividade| %>
           <li>
