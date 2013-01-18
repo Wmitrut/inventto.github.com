@@ -36,4 +36,10 @@ class AtividadesController < ApplicationController
     end
     render :partial => "projetos"
   end
+
+  def kanban
+    @semana = Time.now.beginning_of_week..Time.now.end_of_week
+    @atividades = Atividade.where :created_at => @semana
+    @programadores = Programador.all
+  end
 end

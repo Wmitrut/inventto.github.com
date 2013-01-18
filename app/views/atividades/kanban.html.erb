@@ -1,0 +1,51 @@
+<table border=1px>
+  <thead>
+    <tr>
+      <th>Projeto</th>
+       <% @semana.step(1.day).each do |day| %>
+      <th><%= day.strftime("%A") %></th>
+      <% end  %>
+      <% @programadores.each do |programador| %>
+        <th><%= programador.nome %> </th>
+      <% end  %>
+    </tr>
+   </thead>
+   <tfoot>
+        <tr>
+          <td>Total:</td>
+       
+         <% @semana.step(1.day).each do |day| %>
+             <td><%= @atividades.select{|atividade|atividade.created_at.day == day.day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
+         <% end  %>
+         <% @programadores.each do |programador| %>
+             <td><%= @atividades.collect(&:horas).flatten.select{|hora|hora.programador == programador}.collect(&:quantas).sum %></td>
+         <% end  %>
+        </tr>
+   </tfoot>
+
+   <tbody>
+      <% @atividades.group_by(&:projeto).each do |projeto, atividades| %>
+        <tr>
+          <td><%= projeto.nome %></td>
+       
+         <% @semana.step(1.day).each do |day| %>
+             <td><%= atividades.select{|atividade|atividade.created_at.day == day.day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
+         <% end  %>
+         <% @programadores.each do |programador| %>
+             <td>
+		<span onclick="$('#<%= programador.nome.parameterize %>-<%= projeto.nome.parameterize %>').toggle()" style="cursor:pointer">
+		  <%= atividades.collect(&:horas).flatten.select{|hora|hora.programador == programador}.collect(&:quantas).sum %>
+                </span>
+                <div id="<%= programador.nome.parameterize %>-<%= projeto.nome.parameterize %>" style="display:none">
+                <% atividades.each do |atividade| %>
+                   <%= atividade.descricao %> <br/>
+                <%end%>
+                </div>
+	     </td>
+         <% end  %>
+        </tr>
+      <% end %>
+  </tbody>
+ </table>
+
+ Total geral: <%= @atividades.collect(&:horas).flatten.collect(&:quantas).sum %>
