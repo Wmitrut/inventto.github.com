@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th>Projeto</th>
-       <% @semana.step(1.day).each do |day| %>
+      <% @semana.each do |day| %>
       <th><%= day.strftime("%A") %></th>
       <% end  %>
       <% @programadores.each do |programador| %>
@@ -14,7 +14,7 @@
         <tr>
           <td>Total:</td>
        
-         <% @semana.step(1.day).each do |day| %>
+         <% @semana.each do |day| %>
              <td><%= @atividades.select{|atividade|atividade.created_at.day == day.day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
          <% end  %>
          <% @programadores.each do |programador| %>
@@ -28,7 +28,7 @@
         <tr>
           <td><%= projeto.nome %></td>
        
-         <% @semana.step(1.day).each do |day| %>
+         <% @semana.each do |day| %>
              <td><%= atividades.select{|atividade|atividade.created_at.day == day.day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
          <% end  %>
          <% @programadores.each do |programador| %>

@@ -38,8 +38,8 @@ class AtividadesController < ApplicationController
   end
 
   def kanban
-    @semana = Time.now.beginning_of_week..Time.now.end_of_week
-    @atividades = Atividade.where :created_at => @semana
+    @atividades = Atividade.where :created_at => Time.now.beginning_of_week..Time.now.end_of_week
+    @semana = @atividades.group_by(&:created_at).keys
     @programadores = Programador.all
   end
 end
