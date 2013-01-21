@@ -15,6 +15,8 @@ InventtoSite::Application.routes.draw do
 
   get "atividades/detalhes"
 
+  get "atividades/detalhes_kanban"
+
   get "atividades/kanban"
   post "atividades/kanban"
 

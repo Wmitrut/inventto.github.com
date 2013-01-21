@@ -60,4 +60,27 @@ class AtividadesController < ApplicationController
 
     render :partial => "detalhes"
   end
+  def detalhes_kanban
+    conditions = {}
+    if (params[:data])
+      data = Date.strptime(params[:data],'%d/%m/%y')
+      conditions[:created_at] = data..data+1.day
+    end
+    if (params[:projeto_id])
+      conditions[:projeto_id] = params[:projeto_id]
+    end
+    if (params[:programador_id])
+      conditions["horas.programador_id"] = params[:programador_id]
+    end
+    if(params[:data_inicial] and params[:data_final])
+      data_inicial = Date.strptime(params[:data_inicial],'%d/%m/%y')
+      data_final = Date.strptime(params[:data_final],'%d/%m/%y')
+      conditions[:created_at] = data_inicial..data_final+1.day
+    end
+    p conditions
+    @atividades_kanban = Atividade.joins(:projeto).joins(:horas).where(conditions)
+    p @atividades_kanban
+
+    render :partial => "detalhes_kanban"
+  end
 end
