@@ -1,20 +1,6 @@
 class AtividadesController < ApplicationController
   def ver
-    conditions = {}
-    if (not params[:projeto].blank?)
-      conditions[:projeto_id] = params[:projeto].to_i
-    end
-    if (not params[:cliente].blank?)
-      conditions["projetos.cliente_id"] = params[:cliente].to_i
-    end
-    if (params[:Atividade] and not params[:Atividade][:data_inicial].blank? and not params[:Atividade][:data_final].blank?)
-      @data_inicial = Date.strptime(params[:Atividade][:data_inicial],'%d/%m/%y')
-      @data_final = Date.strptime(params[:Atividade][:data_final],'%d/%m/%y')
-      if (@data_inicial <= @data_final)
-        conditions[:created_at] = @data_inicial..@data_final+1.day
-      end
-    end
-    @atividades = Atividade.joins(:projeto).where(conditions)
+    @atividades = Atividade.joins(:projeto).where(filtro params)
   end
   def lancar
   end
@@ -38,8 +24,28 @@ class AtividadesController < ApplicationController
   end
 
   def kanban
-    @atividades = Atividade.where :created_at => Time.now.beginning_of_week..Time.now.end_of_week
-    @semana = @atividades.group_by(&:created_at).keys
+    @atividades = Atividade.joins(:projeto).where(filtro params)
+    @semana = @atividades.group_by{|atividade|atividade.created_at.beginning_of_day}.keys
     @programadores = Programador.all
+  end
+  def filtro params
+    conditions = {}
+    if (not params[:projeto].blank?)
+      conditions[:projeto_id] = params[:projeto].to_i
+    end
+    if (not params[:cliente].blank?)
+      conditions["projetos.cliente_id"] = params[:cliente].to_i
+    end
+    if (params[:Atividade] and not params[:Atividade][:data_inicial].blank? and not params[:Atividade][:data_final].blank?)
+      @data_inicial = Date.strptime(params[:Atividade][:data_inicial],'%d/%m/%y')
+      @data_final = Date.strptime(params[:Atividade][:data_final],'%d/%m/%y')
+    else
+        @data_inicial = Time.now.beginning_of_week
+        @data_final = Time.now.end_of_week
+    end
+    if (@data_inicial and @data_final and @data_inicial <= @data_final)
+      conditions[:created_at] = @data_inicial..@data_final+1.day
+    end
+    conditions
   end
 end

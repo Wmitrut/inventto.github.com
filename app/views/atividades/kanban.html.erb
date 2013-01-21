@@ -1,9 +1,12 @@
+<% @action = "/atividades/kanban" %>
+<%= render :partial => "filtros" %>
+
 <table border=1px>
   <thead>
     <tr>
       <th>Projeto</th>
       <% @semana.each do |day| %>
-      <th><%= day.strftime("%A") %></th>
+      <th><%= day.strftime("%d/%m/%y") %></th>
       <% end  %>
       <% @programadores.each do |programador| %>
         <th><%= programador.nome %> </th>
@@ -15,7 +18,7 @@
           <td>Total:</td>
        
          <% @semana.each do |day| %>
-             <td><%= @atividades.select{|atividade|atividade.created_at.day == day.day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
+             <td><%= @atividades.select{|atividade|atividade.created_at.beginning_of_day == day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
          <% end  %>
          <% @programadores.each do |programador| %>
              <td><%= @atividades.collect(&:horas).flatten.select{|hora|hora.programador == programador}.collect(&:quantas).sum %></td>
@@ -29,7 +32,7 @@
           <td><%= projeto.nome %></td>
        
          <% @semana.each do |day| %>
-             <td><%= atividades.select{|atividade|atividade.created_at.day == day.day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
+             <td><%= atividades.select{|atividade|atividade.created_at.beginning_of_day == day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
          <% end  %>
          <% @programadores.each do |programador| %>
              <td>
