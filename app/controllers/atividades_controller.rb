@@ -48,4 +48,16 @@ class AtividadesController < ApplicationController
     end
     conditions
   end
+  def detalhes
+    conditions={}
+    conditions[:projeto_id] = params[:projeto_id].to_i
+    data = Date.strptime(params[:data],'%d/%m/%Y')
+    conditions[:created_at] = data..data+1.day
+    p conditions
+
+    @atividades_do_dia = Atividade.joins(:projeto).where(conditions)
+    p @atividades_do_dia
+
+    render :partial => "detalhes"
+  end
 end

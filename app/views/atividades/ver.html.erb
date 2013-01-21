@@ -1,4 +1,12 @@
 <% @action = "/atividades/ver" %>
+<script type="text/javascript">
+  abrirJanela = function(titulo, endereco) {
+    $.window({
+      title: titulo,
+      url: endereco
+    });
+  };
+</script>
 <%= render :partial => "filtros" %>
 <h1>Atividades
 <% if @data_inicial and @data_final %>
@@ -15,26 +23,12 @@
     <% @atividades.group_by(&:projeto).each do |projeto, atividades| %>
       <li>
         <%= projeto.nome %> -
-        <%= projeto.cliente.nome rescue "" %> 
+        <%= projeto.cliente.nome rescue "" %>
       <ul>
         <% atividades.group_by{|a|a.created_at.strftime('%d/%m/%Y')}.each do |data, atividades_do_dia| %>
-          <li>
+          <li onclick="abrirJanela('<%= data %>', '/atividades/detalhes?data=<%= data %>&projeto_id=<%= projeto.id %>')">
             <%= data %> - Total horas:
             <%= totalizar_horas atividades_do_dia %>
-            <ul>
-            <% atividades_do_dia.each do |atividade|%>
-              <li>
-              <%= atividade.descricao %>
-              <ul>
-                <% atividade.horas.each do |hora| %>
-                  <li>
-                  <%= hora.programador.nome %> -  <%= hora.quantas %>
-                  </li>
-                <% end %>
-              </ul>
-              </li>
-            <% end %>
-          </ul>
           </li>
         <% end %>
       </ul>

@@ -16,7 +16,7 @@
    <tfoot>
         <tr>
           <td>Total:</td>
-       
+
          <% @semana.each do |day| %>
              <td><%= @atividades.select{|atividade|atividade.created_at.beginning_of_day == day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
          <% end  %>
@@ -30,7 +30,7 @@
       <% @atividades.group_by(&:projeto).each do |projeto, atividades| %>
         <tr>
           <td><%= projeto.nome %></td>
-       
+
          <% @semana.each do |day| %>
              <td><%= atividades.select{|atividade|atividade.created_at.beginning_of_day == day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
          <% end  %>
