@@ -41,7 +41,7 @@
           <td onclick="abrirJanela('<%= projeto.nome %> - de <%= data1=@data_inicial.strftime('%d/%m/%y')%> até <%= data2=@data_final.strftime('%d/%m/%y')%>','/atividades/detalhes_kanban?projeto_id=<%= projeto.id %>&data_inicial=<%= data1%>&data_final=<%= data2%>')"><%= projeto.nome %></td>
 
          <% @semana.each do |day| %>
-             <td><%= atividades.select{|atividade|atividade.created_at.beginning_of_day == day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
+           <td onclick="abrirJanela('<%= projeto.nome %> - <%= day.strftime("%d/%m/%y")  %>','/atividades/detalhes_kanban?data=<%= day.strftime("%d/%m/%y")  %>&projeto_id=<%= projeto.id %>')"><%= atividades.select{|atividade|atividade.created_at.beginning_of_day == day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
          <% end  %>
          <% @programadores.each do |programador| %>
              <td>
