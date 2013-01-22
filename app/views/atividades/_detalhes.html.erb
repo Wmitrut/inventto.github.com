@@ -1,0 +1,14 @@
+ <ul>
+  <% @atividades_do_dia.each do |atividade|%>
+    <li>
+      <%= atividade.descricao %>
+      <ul>
+        <% atividade.horas.each do |hora| %>
+          <li>
+            <%= hora.programador.nome %> -  <%= hora.quantas %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <%end%>
+</ul>

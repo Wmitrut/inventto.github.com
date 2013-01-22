@@ -1,0 +1,24 @@
+<ul>
+  <% @atividades_kanban.group_by(&:projeto).each do |projeto, atividades| %>
+    <li>
+      <%= projeto.nome %> -
+      <%= projeto.cliente.nome rescue "" %>
+      <ul>
+        <% atividades.each do |atividade|%>
+          <li>
+            <%= atividade.descricao %>
+            <ul>
+              <% atividade.horas.each do |hora| %>
+                <% if not params[:programador_id] or params[:programador_id].to_i == hora.programador_id %>
+                <li>
+                  <%= hora.programador.nome %> -  <%= hora.quantas %>
+                </li>
+                <% end %>
+              <% end %>
+            </ul>
+          </li>
+        <%end%>
+      </ul>
+    </li>
+  <%end%>
+</ul>

@@ -1,0 +1,33 @@
+<form action="<%= @action %>" method="POST">
+  <label for="cliente">Cliente:</label> 
+  <%= select_tag "cliente", options_from_collection_for_select(Cliente.all, :id, :nome, params[:cliente]),:prompt => "Selecione" %>
+  <label for="projeto">Projeto:</label>
+  <script type="text/javascript">
+    carregar_projetos = function() {
+      $.get("/atividades/carregar_projetos?cliente="+$("#cliente")[0].value, function(data) {
+        $("#projetos").html(data);
+      });
+    };
+    jQuery(function($) {
+      $("#cliente").change(function() {
+        carregar_projetos();
+      });
+    });
+  </script>
+
+   <span id='projetos'>
+    <script type="text/javascript">
+    jQuery(function($) {
+      carregar_projetos();
+    });
+    </script>
+  </span>
+  <label for="data_inicial">Data inicial:</label>
+  <%= datepicker_input Atividade,"data_inicial",:dateFormat => "d/m/y",:size => 10, :value => (@data_inicial and @data_inicial.strftime('%y-%m-%d')) %>
+  <label for="data_final">Data final:</label>
+  <%= datepicker_input Atividade,"data_final",:dateFormat => "d/m/y",:size => 10, :value => (@data_final and @data_final.strftime('%y-%m-%d')) %>
+  
+<input type="submit" value="Filtrar"/>
+</form>
+
+
