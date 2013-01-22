@@ -10,7 +10,8 @@
     });
   };
 </script>
-<table border=1px>
+<div class="scroll">
+<table class="kanban" cellspacing="0" cellpadding="0">
   <thead>
     <tr>
       <th>Projeto</th>
@@ -24,13 +25,14 @@
    </thead>
    <tfoot>
         <tr>
-          <td>Total:</td>
+          <th>Total:</th>
 
          <% @semana.each do |day| %>
              <td onclick="abrirJanela('<%= day.strftime("%d/%m/%y")  %>','/atividades/detalhes_kanban?data=<%= day.strftime("%d/%m/%y")  %>')"><%= @atividades.select{|atividade|atividade.created_at.beginning_of_day == day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
          <% end  %>
          <% @programadores.each do |programador| %>
-             <td><%= @atividades.collect(&:horas).flatten.select{|hora|hora.programador == programador}.collect(&:quantas).sum %></td>
+             <td onclick="abrirJanela('<%= programador.nome %> - de <%= data1=@data_inicial.strftime('%d/%m/%y')%> até <%= data2=@data_final.strftime('%d/%m/%y')%>','/atividades/detalhes_kanban?programador_id=<%= programador.id %>&data_inicial=<%= data1%>&data_final=<%= data2%>')">
+<%= @atividades.collect(&:horas).flatten.select{|hora|hora.programador == programador}.collect(&:quantas).sum %></td>
          <% end  %>
         </tr>
    </tfoot>
@@ -38,7 +40,7 @@
    <tbody>
       <% @atividades.group_by(&:projeto).each do |projeto, atividades| %>
         <tr>
-          <td onclick="abrirJanela('<%= projeto.nome %> - de <%= data1=@data_inicial.strftime('%d/%m/%y')%> até <%= data2=@data_final.strftime('%d/%m/%y')%>','/atividades/detalhes_kanban?projeto_id=<%= projeto.id %>&data_inicial=<%= data1%>&data_final=<%= data2%>')"><%= projeto.nome %></td>
+          <th onclick="abrirJanela('<%= projeto.nome %> - de <%= data1=@data_inicial.strftime('%d/%m/%y')%> até <%= data2=@data_final.strftime('%d/%m/%y')%>','/atividades/detalhes_kanban?projeto_id=<%= projeto.id %>&data_inicial=<%= data1%>&data_final=<%= data2%>')"><%= projeto.nome %></th>
 
          <% @semana.each do |day| %>
            <td onclick="abrirJanela('<%= projeto.nome %> - <%= day.strftime("%d/%m/%y")  %>','/atividades/detalhes_kanban?data=<%= day.strftime("%d/%m/%y")  %>&projeto_id=<%= projeto.id %>')"><%= atividades.select{|atividade|atividade.created_at.beginning_of_day == day}.collect(&:horas).flatten.collect(&:quantas).sum %></td>
@@ -59,5 +61,6 @@
       <% end %>
   </tbody>
  </table>
+ </div>
 
- Total geral: <%= @atividades.collect(&:horas).flatten.collect(&:quantas).sum %>
+ <div class="total_geral">Total geral: <%= @atividades.collect(&:horas).flatten.collect(&:quantas).sum %></div>
