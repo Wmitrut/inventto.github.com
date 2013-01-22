@@ -1,12 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-=begin
-protected
+  before_filter :carregar_projetos, :except => []
 
-  def self.active_scaffold_controller_for(klass)
-    return "#{klass}ScaffoldController".constantize rescue super
+  def carregar_projetos
+    $projetos ||= Projeto.all
   end
-=end
-
 end

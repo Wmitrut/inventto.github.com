@@ -136,3 +136,11 @@ clear:both
 .container .extended {
 border:none;
 }
+.projetos{
+  margin-top: 5px;
+  color: rgb(19, 195, 57);
+  font-size: 14px;
+}
+.descricao{
+  text-align: justify
+}
