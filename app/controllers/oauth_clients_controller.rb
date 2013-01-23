@@ -49,4 +49,6 @@ class OauthClientsController < ApplicationController
       raise ActiveRecord::RecordNotFound
     end
   end
+  def login_required
+  end
 end
