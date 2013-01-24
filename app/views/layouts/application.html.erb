@@ -18,6 +18,13 @@
         <li><a href="/res">Invent.tores</a></li>
         <li><a href="/sobre">Sobre</a></li>
         <li><a href="/contato">Contato</a></li>
+        <li>
+          <% if session[:user_id] and session[:user_id] > 0 %>
+            <a href="/logout">Logout
+          <% else %>
+            <a href="/auth/google_oauth2">Login
+          <% end %>
+        </a></li>
       </ul>
     </div>
     <div id="logo">
