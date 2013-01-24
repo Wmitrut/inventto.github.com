@@ -6,7 +6,8 @@ gem 'brdinheiro'
 gem 'markdown'
 gem 'rdiscount'
 gem 'jquery_datepicker'
-gem "oauth-plugin", "~> 0.4.0"
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
