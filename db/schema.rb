@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123184212) do
+ActiveRecord::Schema.define(:version => 20130124105501) do
 
   create_table "atividades", :force => true do |t|
     t.text     "descricao"
@@ -19,20 +19,6 @@ ActiveRecord::Schema.define(:version => 20130123184212) do
     t.datetime "updated_at", :null => false
     t.integer  "projeto_id"
   end
-
-  create_table "client_applications", :force => true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.string   "support_url"
-    t.string   "callback_url"
-    t.string   "key",          :limit => 40
-    t.string   "secret",       :limit => 40
-    t.integer  "user_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-  end
-
-  add_index "client_applications", ["key"], :name => "index_client_applications_on_key", :unique => true
 
   create_table "clientes", :force => true do |t|
     t.string   "nome"
@@ -51,33 +37,6 @@ ActiveRecord::Schema.define(:version => 20130123184212) do
   add_index "horas", ["atividade_id"], :name => "index_horas_on_atividade_id"
   add_index "horas", ["programador_id"], :name => "index_horas_on_programador_id"
 
-  create_table "oauth_nonces", :force => true do |t|
-    t.string   "nonce"
-    t.integer  "timestamp"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "oauth_nonces", ["nonce", "timestamp"], :name => "index_oauth_nonces_on_nonce_and_timestamp", :unique => true
-
-  create_table "oauth_tokens", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "type",                  :limit => 20
-    t.integer  "client_application_id"
-    t.string   "token",                 :limit => 40
-    t.string   "secret",                :limit => 40
-    t.string   "callback_url"
-    t.string   "verifier",              :limit => 20
-    t.string   "scope"
-    t.datetime "authorized_at"
-    t.datetime "invalidated_at"
-    t.datetime "expires_at"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
-  end
-
-  add_index "oauth_tokens", ["token"], :name => "index_oauth_tokens_on_token", :unique => true
-
   create_table "programadores", :force => true do |t|
     t.string   "nome"
     t.datetime "created_at", :null => false
@@ -95,8 +54,6 @@ ActiveRecord::Schema.define(:version => 20130123184212) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
