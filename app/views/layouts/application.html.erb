@@ -11,9 +11,6 @@
 <div id="head">
   <div class="fix_width">
     <div id="menu">
-      <div class="login">
-        Bem Vindo ao Site Inventto
-      </div>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/clientes">Clientes</a></li>
@@ -31,6 +28,10 @@
       </ul>
     </div>
     <div id="logo">
+      <div class="login">
+        Bem Vindo <%= (n=session[:user_name]) ? ", " + n.to_s : "a Invent.to" %>
+      <img src="<%= session[:user_picture] %>" />
+      </div>
       <a>invent</a>.to
     </div>
   </div>

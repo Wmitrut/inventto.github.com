@@ -145,6 +145,10 @@ border:none;
   text-align: justify
 }
 .login{
-  float: right;
-  margin-bottom:30px;
+  position: absolute;
+  right: 20px;
+  font-size: 14px;
+}
+img{
+  height: 24px;
 }
