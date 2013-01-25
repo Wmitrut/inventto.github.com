@@ -8,8 +8,7 @@ gem 'rdiscount'
 gem 'jquery_datepicker'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem "brazilian-rails"
 
 gem 'activerecord-postgresql-adapter'
 
