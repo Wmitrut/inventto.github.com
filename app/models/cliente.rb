@@ -1,6 +1,9 @@
 class Cliente < ActiveRecord::Base
   attr_accessible :nome
-  def label 
-   nome 
+
+  has_many :projeto
+
+  def label
+   nome
   end
 end
