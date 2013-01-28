@@ -32,11 +32,13 @@
         Bem Vindo <%= (n=session[:user_name]) ? ", " + n.to_s : "a Invent.to" %>
       <img src="<%= session[:user_picture] %>" />
       </div>
-      <a>invent</a>.to
+      <a href="/">invent</a>.to
+      <span class="descricao_logo">Soluções em sistemas computacionais</span>
     </div>
   </div>
 </div>
 <div id="body" class="fix_width">
+  <div class="slide_show"></div>
   <%= yield %>
   <i></i>
 </div>

@@ -26,7 +26,7 @@
 }
 * {
 color:white;
-font:12px "Open Sans", Verdana, Arial;
+font: 12px "Open Sans", Verdana, Arial;
 }
 body {
 background-color:rgb(150, 150, 150);
@@ -34,7 +34,8 @@ margin:0 0 100px;
 }
 #head {
 background-color:#000;
-height:95px
+height:85px;
+border-bottom: 2px solid white;
 }
 .fix_width {
 margin:0 auto;
@@ -42,11 +43,26 @@ max-width:940px
 }
 #logo {
 color:rgb(10, 200, 40);
-font:60px "Anton", Verdana, Arial;
+font:51px "Anton", Verdana, Arial;
 padding:5px 0;
+-webkit-animation: cssAnimation 1.0821s 11 linear;
+-moz-animation: cssAnimation 1.0821s 11 linear;
+-o-animation: cssAnimation 1.0821s 11 linear;
 }
+-webkit-keyframes cssAnimation {from { -webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+to { -webkit-transform: rotate(0deg) scale(0.75) skew(5deg) translate(8px); }}
+@-moz-keyframes cssAnimation {
+  from { -moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+  to { -moz-transform: rotate(0deg) scale(0.75) skew(5deg) translate(8px); }
+  @-o-keyframes cssAnimation {
+    from { -o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
+    to { -o-transform: rotate(0deg) scale(0.75) skew(5deg) translate(8px); }
 #logo a {
-font:60px "Anton", Verdana, Arial;
+font:51px "Anton", Verdana, Arial;
+text-decoration: none;
+}
+#logo a:hover{
+text-decoration: underline;
 }
 #menu {
 margin-top:45px;
@@ -152,3 +168,12 @@ border:none;
 img{
   height: 24px;
 }
+.descricao_logo{
+  font: normal normal normal 14px/1.3em Helvetica, Arial, sans-serif;
+  Vertical-align: baseline;
+  margin-top:30px;
+  margin-left: 20px;
+  position: absolute;
+  text-transform: uppercase;
+}
+
