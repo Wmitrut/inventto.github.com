@@ -41,32 +41,47 @@ border-bottom: 2px solid white;
 margin:0 auto;
 max-width:940px
 }
-#logo {
+.inventto {
+float: left;
+position: left;
 color:rgb(10, 200, 40);
 font:51px "Anton", Verdana, Arial;
 padding:5px 0;
--webkit-animation: cssAnimation 1.0821s 11 linear;
--moz-animation: cssAnimation 1.0821s 11 linear;
--o-animation: cssAnimation 1.0821s 11 linear;
+width: 200px;
+transition:All 1s ease;
+-webkit-transition:All 1s ease;
+-moz-transition:All 1s ease;
+-o-transition:All 1s ease;
+transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
+-webkit-transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
+-moz-transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
+-o-transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
+-transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
 }
--webkit-keyframes cssAnimation {from { -webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
-to { -webkit-transform: rotate(0deg) scale(0.75) skew(5deg) translate(8px); }}
-@-moz-keyframes cssAnimation {
-  from { -moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
-  to { -moz-transform: rotate(0deg) scale(0.75) skew(5deg) translate(8px); }
-  @-o-keyframes cssAnimation {
-    from { -o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px); }
-    to { -o-transform: rotate(0deg) scale(0.75) skew(5deg) translate(8px); }
-#logo a {
+.inventto a {
 font:51px "Anton", Verdana, Arial;
 text-decoration: none;
 }
-#logo a:hover{
+.inventto:hover{
 text-decoration: underline;
+transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
+-webkit-transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
+-moz-transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
+-o-transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
+-ms-transform: rotate(5deg) scale(1.1) skew(0deg) translate(5px);
 }
 #menu {
 margin-top:45px;
-float:right
+float:right;
+transition:All 1s ease;
+-webkit-transition:All 1s ease;
+-moz-transition:All 1s ease;
+-o-transition:All 1s ease;
+transform: rotate(0deg) scale(0.799) skew(1deg) translate(3px);
+-webkit-transform: rotate(0deg) scale(0.799) skew(1deg) translate(3px);
+-moz-transform: rotate(0deg) scale(0.799) skew(1deg) translate(3px);
+-o-transform: rotate(0deg) scale(0.799) skew(1deg) translate(3px);
+-ms-transform: rotate(0deg) scale(0.799) skew(1deg) translate(3px);
 }
 #menu ul li {
 float:left;
@@ -76,9 +91,26 @@ margin: 0 0 0 20px;
 #menu ul li a {
 font:14px "Open Sans", Verdana, Arial;
 text-decoration:none;
+font-size: 17px;
 cursor:pointer;
 }
-#menu ul li a:hover {
+#menu div {
+transition:All 0.3s ease;
+-webkit-transition:All 0.3s ease;
+-moz-transition:All 0.3s ease;
+-o-transition:All 0.3s ease;
+}
+#menu div:hover {
+-moz-box-shadow: 10px 15px 75px #05fa46;
+-webkit-box-shadow: 10px 15px 75px #05fa46;
+box-shadow: 10px 15px 75px #05fa46;
+transform: rotate(0deg) scale(1.2) skew(1deg) translate(3px);
+-webkit-transform: rotate(0deg) scale(1.2) skew(1deg) translate(3px);
+-moz-transform: rotate(0deg) scale(1.2) skew(1deg) translate(3px);
+-o-transform: rotate(0deg) scale(1.2) skew(1deg) translate(3px);
+-ms-transform: rotate(0deg) scale(1.2) skew(1deg) translate(3px);
+}
+#menu a:hover {
 color:rgb(10, 200, 40);
 }
 #body {
@@ -162,18 +194,19 @@ border:none;
 }
 .login{
   position: absolute;
-  right: 20px;
+  right: 0;
   font-size: 14px;
 }
 img{
-  height: 24px;
+  margin-left: 20px;
+  position: absolute;
 }
 .descricao_logo{
+  float: right;
+  position: absolute;
   font: normal normal normal 14px/1.3em Helvetica, Arial, sans-serif;
   Vertical-align: baseline;
   margin-top:30px;
   margin-left: 20px;
-  position: absolute;
   text-transform: uppercase;
 }
-
