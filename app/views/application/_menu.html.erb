@@ -1,0 +1,18 @@
+ <div class="menu">
+      <ul>
+        <li><div><a href="/">Home</a></div></li>
+        <li><div><a href="/clientes">Clientes</a></div></li>
+        <li><div><a href="/s">Invent.tos</a></div></li>
+        <li><div><a href="/res">Invent.tores</a></div></li>
+        <li><div><a href="/sobre">Sobre</a></div></li>
+        <li><div><a href="/contato">Contato</a></div></li>
+        <li><div>
+          <% if session[:user_id] and session[:user_id] > 0 %>
+            <a href="/logout">Logout
+          <% else %>
+            <a href="/auth/google_oauth2">Login
+          <% end %>
+    </a></div></li>
+      </ul>
+    </div>
+
