@@ -43,10 +43,10 @@ max-width:940px
 }
 #copyright {
   float: left;
-  margin: 1px;
+  margin-top: 1px;
 }
-.extended .menu{
-  margin-top: 2px;
+.extended .menu {
+  margin-top: -14px;
 }
 .inventto {
 float: left;
@@ -143,6 +143,7 @@ background-color:black;
 clear:both;
 border-top: 2px solid rgb(10, 200, 40);
 border-bottom: 2px solid rgb(10, 200, 40);
+height: 15px;
 }
 .extended .fix_width {
 max-width:900px
