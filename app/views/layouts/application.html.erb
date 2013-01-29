@@ -9,15 +9,65 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-      $("#projetos").accordion({
+      $("#projetos_accordion").accordion({
         collapsible: true, /* carrega todos os seletores fechados juntamente com o active e o alwaysOpen = false */
         active: false,
         alwaysOpen: false,
         animated: 'bounceslide',
-        autoHeight: true,
-        event: 'click' /* or mouseover */
+        heightStyle: "content",
+        event: 'hoverintent' /* or mouseover */
       });
   });
+  var cfg = ($.hoverintent = {
+    sensitivity: 6,
+    interval: 200
+  });
+
+  $.event.special.hoverintent = {
+    setup: function() {
+      $( this ).bind( "mouseover", jQuery.event.special.hoverintent.handler );
+    },
+    teardown: function() {
+      $( this ).unbind( "mouseover", jQuery.event.special.hoverintent.handler );
+    },
+    handler: function( event ) {
+      var that = this,
+        args = arguments,
+        target = $( event.target ),
+        cX, cY, pX, pY;
+
+      function track( event ) {
+        cX = event.pageX;
+        cY = event.pageY;
+      };
+      pX = event.pageX;
+      pY = event.pageY;
+      function clear() {
+        target
+          .unbind( "mousemove", track )
+          .unbind( "mouseout", arguments.callee );
+        clearTimeout( timeout );
+      }
+      function handler() {
+        if ( ( Math.abs( pX - cX ) + Math.abs( pY - cY ) ) < cfg.sensitivity ) {
+          clear();
+          event.type = "hoverintent";
+          // prevent accessing the original event since the new event
+          // is fired asynchronously and the old event is no longer
+          // usable (#6028)
+          event.originalEvent = {};
+          jQuery.event.handle.apply( that, args );
+        } else {
+          pX = cX;
+          pY = cY;
+          timeout = setTimeout( handler, cfg.interval );
+        }
+      }
+      var timeout = setTimeout( handler, cfg.interval );
+      target.mousemove( track ).mouseout( clear );
+      return true;
+    }
+  };
 </script>
 
 </head>
@@ -44,7 +94,7 @@
     <div id="logo">
       <div class="login">
         Bem Vindo <%= (n=session[:user_name]) ? ", " + n.to_s : "a Invent.to" %>
-      <img src="<%= session[:user_picture] %>" />
+      <img id="login_img" src="<%= session[:user_picture] %>" />
       </div>
       <div class="inventto"> <a href="/">invent</a>.to </div>
       <span class="descricao_logo">Soluções em sistemas computacionais</span>
@@ -60,7 +110,7 @@
   <div class="fix_width">
     <div class="side">
       <div class="title">Projetos Atuais</div>
-      <div id="projetos">
+      <div id="projetos_accordion">
         <% $projetos.each do |projeto| %>
           <div class="projeto"><%= projeto.nome.upcase %></div>
           <div class="descricao"><%= projeto.descricao %></div>
@@ -69,9 +119,19 @@
     </div>
     <div class="side">
       <div class="title">Agenda</div>
+       <iframe class="calendario" src="https://www.google.com/calendar/embed?src=invent.to.sistemas%40gmail.com&ctz=America/Sao_Paulo" style="border: 0" width="271" height="206" frameborder="0" scrolling="no"></iframe>
     </div>
     <div class="side">
-      <div class="title">Contato</div>
+      <div class="title">Contatos</div>
+      Contato:<span> (46) 8806-8254</span><br />
+      Contato:<span> (46) 9911-7879</span><br />
+      <br />
+      email:<span> marlonscalabrin@gmail.com</span><br />
+      email:<span> jonatasdp@gmail.com</span><br />
+      <hr/>
+      <img class="social" src="http://static.wix.com/media/da00086a27cc2c52ec7a11ec468c4d29.wix_mp_srz_28_28_85_22_0.50_1.20_0.00_wix_mp_srz"/>
+      <img class="social" src="http://static.wix.com/media/4941bced49cf4de3e8d7ea1582892fb8.wix_mp_srz_28_28_85_22_0.50_1.20_0.00_wix_mp_srz"/>
+      <img class="social" src="http://static.wix.com/media/608e7725939b0eda16493c462180552c.wix_mp_srz_28_28_85_22_0.50_1.20_0.00_wix_mp_srz"/>
     </div>
     <i></i>
   </div>

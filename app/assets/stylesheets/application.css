@@ -147,6 +147,22 @@ float:right;
 background-color: rgb(50, 50, 50);
 margin: -20px -20px -20px 20px;
 height:100%;
+transition:All 1s ease;
+-webkit-transition:All 1s ease;
+-moz-transition:All 1s ease;
+-o-transition:All 1s ease;
+transform: rotate(0deg) scale(0.802) skew(1deg) translate(0px);
+-webkit-transform: rotate(0deg) scale(0.802) skew(1deg) translate(0px);
+-moz-transform: rotate(0deg) scale(0.802) skew(1deg) translate(0px);
+-o-transform: rotate(0deg) scale(0.802) skew(1deg) translate(0px);
+-ms-transform: rotate(0deg) scale(0.802) skew(1deg) translate(0px);
+}
+.right_info:hover {
+transform: rotate(360deg) scale(1.419) skew(1deg) translate(0px);
+-webkit-transform: rotate(360deg) scale(1.419) skew(1deg) translate(0px);
+-moz-transform: rotate(360deg) scale(1.419) skew(1deg) translate(0px);
+-o-transform: rotate(360deg) scale(1.419) skew(1deg) translate(0px);
+-ms-transform: rotate(360deg) scale(1.419) skew(1deg) translate(0px);
 }
 .left_info {
 font:30px "Anton", Verdana, Arial;
@@ -171,6 +187,9 @@ font:30px "Anton", Verdana, Arial;
 color:rgb(10, 200, 40);
 border-bottom: 1px solid white;
 }
+.side span {
+  color: #00FF00;
+}
 .container .title {
 color:white;
 }
@@ -186,7 +205,7 @@ border:none;
 }
 .projeto{
   margin-top: 5px;
-  color: white/*#0AC828*/;
+  color: #0AC828;
   font-size: 14px;
   font-weight: bold;
   text-indent: 18px;
@@ -199,7 +218,7 @@ border:none;
   right: 0;
   font-size: 14px;
 }
-img{
+#login_img{
   margin-left: 20px;
   position: absolute;
 }
@@ -213,16 +232,25 @@ img{
   text-transform: uppercase;
 }
 .ui-accordion .ui-accordion-header{ /* Cabeçalho: onde exibe o nome do projeto */
-  background: #969696;
+  background: transparent;
 }
 .ui-accordion .ui-accordion-content-active { /* onde exibe a descrição do projeto */
   background: #323232;
   color: white;
 }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { /* quando está selecionado */
-  border: 1px solid #0AC828;
+  border: 1px solid #646464;
 }
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {/*quando passa o mouse*/
-  border: 1px solid rgb(51,255,0);
+  border: 1px solid #646464;
   color: rgb(51,255,0);
+}
+.ui-widget-content, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  border: 1px solid #646464;
+}
+.ui-state-active .ui-icon, .ui-state-default .ui-icon {
+  background-image: url(ui-icons_ffffff_256x240.png);
+}
+.social{
+  margin-right: 5px;
 }
