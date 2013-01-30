@@ -267,3 +267,34 @@ border:none;
 .social{
   margin-right: 5px;
 }
+.messages {
+  display: block;
+  position: absolute;
+  width: 100%
+}
+.messages .error-message,
+.messages .info-message,
+.messages .warning-message,
+.messages .notice-message{
+  margin: 0 auto 10px;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  width: 400px;
+  padding: 5px;
+  border: 3px dashed white;
+  font-size: 16px;
+}
+
+.messages .error-message{
+  background-color: red;
+}
+.messages .info-message{
+  background-color: lightblue;
+}
+.messages .warning-message{
+  background-color: orange;
+}
+.messages .notice-message{
+  background-color: darkgreen;
+}

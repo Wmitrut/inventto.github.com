@@ -5,4 +5,20 @@ module ApplicationHelper
     RDiscount.new(IO.read(file), :smart, :filter_html).to_html
   end
   memoize :markdownify
+  def flash_message
+    messages = "<div class='messages'>"
+    [:notice, :info, :warning, :error].each {|type|
+      if flash[type]
+        messages += "<p class=\"#{type}-message\" style='display:none'>#{flash[type]}</p>"
+        messages += "<script type='text/javascript'>
+
+        $('.#{type}-message').show('fade',1000);
+        setTimeout(\"$('.#{type}-message').hide('fade',1000);\", 5000);
+
+        </script>"
+      end
+    }
+    messages += "</div>"
+    messages.html_safe
+  end
 end
