@@ -9,7 +9,6 @@ gem 'jquery_datepicker'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem "brazilian-rails"
-
 gem 'activerecord-postgresql-adapter'
 
 #gem 'jruby-openssl'
