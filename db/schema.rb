@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130128192439) do
+ActiveRecord::Schema.define(:version => 20130130110814) do
 
   create_table "atividades", :force => true do |t|
     t.text     "descricao"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20130128192439) do
     t.string   "name"
     t.string   "uid"
     t.string   "image"
+    t.boolean  "developer"
   end
 
 end
