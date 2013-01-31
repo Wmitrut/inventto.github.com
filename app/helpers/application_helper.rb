@@ -6,7 +6,7 @@ module ApplicationHelper
   end
   memoize :markdownify
   def flash_message
-    messages = "<div class='messages'>"
+    messages = "<div class='messages'>";
     [:notice, :info, :warning, :error].each {|type|
       if flash[type]
         messages += "<p class=\"#{type}-message\" style='display:none'>#{flash[type]}</p>"

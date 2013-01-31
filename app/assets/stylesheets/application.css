@@ -194,7 +194,10 @@ font:30px "Anton", Verdana, Arial;
 color:rgb(10, 200, 40);
 border-bottom: 1px solid white;
 }
-.side span a {
+.side span {
+  color: #00FF00;
+}
+.side a {
   color: #00FF00;
   text-decoration: none;
 }
@@ -285,16 +288,15 @@ border:none;
   border: 3px dashed white;
   font-size: 16px;
 }
-
 .messages .error-message{
-  background-color: red;
+  background: url(error.ico) no-repeat 40px #FF8585;
 }
 .messages .info-message{
-  background-color: lightblue;
+  background: url(info.ico) no-repeat 40px lightblue;
 }
 .messages .warning-message{
-  background-color: orange;
+  background: url(warning.ico) no-repeat 40px orange;
 }
 .messages .notice-message{
-  background-color: darkgreen;
+  background: url(notice.ico) no-repeat 40px darkgreen;
 }

@@ -13,6 +13,7 @@ InventtoSite::Application.routes.draw do
   resources :projetos do as_routes end
 
 #  match ':controller(/:action(/:id))(.:format)'
+
   get 'oauth/google'
   get "projetos/new"
 
