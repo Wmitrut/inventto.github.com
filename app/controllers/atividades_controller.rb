@@ -1,22 +1,21 @@
 class AtividadesController < ApplicationController
+  before_filter :verifica_usuario
   def ver
     if id = session[:user_id]
-      if User.find(session[:user_id]).developer
+      if user.developer
+        # futuro: user.projetos.find(params[:projeto_id]).atividades 
         @atividades = Atividade.unscoped.joins(:projeto).where(filtro params)
       else
         @atividades = Atividade.do_usuario(id).where(filtro params)
       end
     else
-      @atividades = Atividade.unscoped.where("false")
+      @atividades = [] #Atividade.unscoped.where("false")
     end
     #@atividades =  Atividade.joins(:projeto).where(filtro params)
   end
   def lancar
-    if session[:user_id]
-      if not User.find(session[:user_id]).developer
-        flash[:error] = 'Acesso nao permitido!'
-        redirect_to :root
-      end
+    if user and not user.developer
+      redirect_to :root, :error => 'Acesso nao permitido!'
     end
   end
   def create
@@ -110,13 +109,11 @@ class AtividadesController < ApplicationController
 
     render :partial => "detalhes_kanban"
   end
-  begin before_filter :verifica_usuario
-    def verifica_usuario
-      if id = session[:user_id]
-        return
-      end
-      flash[:error] = 'Acesso nao permitido!'
-      redirect_to :root
+  def verifica_usuario
+    if id = session[:user_id]
+      return
     end
+    flash[:error] = 'Acesso nao permitido!'
+    redirect_to :root
   end
 end

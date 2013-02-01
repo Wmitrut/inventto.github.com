@@ -3,6 +3,16 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :clientes
 
+  has_many :projetos, :through => :clientes
+
+  def clientes
+    if developer
+      Cliente.all
+    else
+      super
+    end
+  end
+
   def self.from_omniauth(auth)
     user = find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)
     if user and img = auth["info"]["image"]

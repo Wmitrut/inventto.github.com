@@ -32,6 +32,6 @@ module ApplicationHelper
     session[:user_id]
   end
   def is_user_developer?
-    User.find(user_id).developer
+    user.developer
   end
 end
