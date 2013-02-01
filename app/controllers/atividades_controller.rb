@@ -1,8 +1,23 @@
 class AtividadesController < ApplicationController
   def ver
-    @atividades = Atividade.joins(:projeto).where(filtro params)
+    if id = session[:user_id]
+      if User.find(session[:user_id]).developer
+       @atividades = Atividade.unscoped.where(filtro params)
+      else
+        @atividades = Atividade.do_usuario(id).where(filtro params)
+      end
+    else
+      @atividades = Atividade.unscoped.where("false")
+    end
+    #@atividades =  Atividade.joins(:projeto).where(filtro params)
   end
   def lancar
+    if session[:user_id]
+      if not User.find(session[:user_id]).developer
+        flash[:error] = 'Acesso nao permitido!'
+        redirect_to :root
+      end
+    end
   end
   def create
     @atividade = Atividade.new :descricao => params[:atividade][:descricao], :projeto_id => params[:projeto]
@@ -18,7 +33,7 @@ class AtividadesController < ApplicationController
     if not params[:cliente].blank?
       @projetos = Projeto.find_all_by_cliente_id(params[:cliente])
     else
-      @projetos = Projeto.all
+      @projetos = Projeto.where("false")
     end
     render :partial => "projetos"
   end
@@ -82,5 +97,14 @@ class AtividadesController < ApplicationController
     p @atividades_kanban
 
     render :partial => "detalhes_kanban"
+  end
+  begin before_filter :verifica_usuario
+    def verifica_usuario
+      if id = session[:user_id]
+        return
+      end
+      flash[:error] = 'Acesso nao permitido!'
+      redirect_to :root
+    end
   end
 end

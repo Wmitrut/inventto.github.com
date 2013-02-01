@@ -47,7 +47,7 @@
          <% end  %>
          <% @programadores.each do |programador| %>
              <td>
-        <span onclick="abrirJanela('<%= programador.nome %> - de <%= data1=@data_inicial.strftime('%d/%m/%y')%> até <%= data2=@data_final.strftime('%d/%m/%y')%>','/atividades/detalhes_kanban?programador_id=<%= programador.id %>&data_inicial=<%= data1%>&data_final=<%= data2%>')">
+               <span onclick="abrirJanela('<%= programador.nome %> - de <%= data1=@data_inicial.strftime('%d/%m/%y')%> até <%= data2=@data_final.strftime('%d/%m/%y')%>','/atividades/detalhes_kanban?programador_id=<%= programador.id %>&data_inicial=<%= data1%>&data_final=<%= data2%>&projeto_id=<%= projeto.id %>')">
 		  <%= atividades.collect(&:horas).flatten.select{|hora|hora.programador == programador}.collect(&:quantas).sum %>
                 </span>
                 <div id="<%= programador.nome.parameterize %>-<%= projeto.nome.parameterize %>" style="display:none">

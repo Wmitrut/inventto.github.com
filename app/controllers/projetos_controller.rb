@@ -14,11 +14,11 @@ class ProjetosController < ApplicationController
     conf.list.columns.exclude :descricao
   end
   def beginning_of_chain
-    if session[:user_id]
+    if id = session[:user_id]
       if User.find(session[:user_id]).developer
         Projeto.unscoped
       else
-        Projeto.do_usuario session[:user_id].to_i
+        Projeto.do_usuario id
       end
     else
       Projeto.unscoped.where("false")

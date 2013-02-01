@@ -1,6 +1,6 @@
 <form action="<%= @action %>" method="POST">
-  <label for="cliente">Cliente:</label> 
-  <%= select_tag "cliente", options_from_collection_for_select(Cliente.all, :id, :nome, params[:cliente]),:prompt => "Selecione" %>
+  <label for="cliente">Cliente:</label>
+  <%= select_tag "cliente", options_from_collection_for_select(Cliente.do_usuario(session[:user_id]), :id, :nome, params[:cliente]),:prompt => "Selecione" %>
   <label for="projeto">Projeto:</label>
   <script type="text/javascript">
     carregar_projetos = function() {
@@ -26,8 +26,6 @@
   <%= datepicker_input Atividade,"data_inicial",:dateFormat => "d/m/y",:size => 10, :value => (@data_inicial and @data_inicial.strftime('%y-%m-%d')) %>
   <label for="data_final">Data final:</label>
   <%= datepicker_input Atividade,"data_final",:dateFormat => "d/m/y",:size => 10, :value => (@data_final and @data_final.strftime('%y-%m-%d')) %>
-  
+
 <input type="submit" value="Filtrar"/>
 </form>
-
-
