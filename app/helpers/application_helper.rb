@@ -21,4 +21,17 @@ module ApplicationHelper
     messages += "</div>"
     messages.html_safe
   end
+  def clientes_visiveis
+    if is_user_developer?
+      Cliente.all
+    else
+      Cliente.do_usuario user_id
+    end
+  end
+  def user_id
+    session[:user_id]
+  end
+  def is_user_developer?
+    User.find(user_id).developer
+  end
 end

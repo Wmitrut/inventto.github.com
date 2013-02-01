@@ -2,7 +2,7 @@ class AtividadesController < ApplicationController
   def ver
     if id = session[:user_id]
       if User.find(session[:user_id]).developer
-       @atividades = Atividade.unscoped.where(filtro params)
+        @atividades = Atividade.unscoped.joins(:projeto).where(filtro params)
       else
         @atividades = Atividade.do_usuario(id).where(filtro params)
       end
@@ -39,8 +39,20 @@ class AtividadesController < ApplicationController
   end
 
   def kanban
-    @atividades = Atividade.joins(:projeto).where(filtro params)
-    @semana = @atividades.group_by{|atividade|atividade.created_at.beginning_of_day}.keys
+    if id = session[:user_id]
+      if User.find(session[:user_id]).developer
+        @atividades = Atividade.unscoped.joins(:projeto).where(filtro params)
+      else
+        @atividades = Atividade.do_usuario(id).where(filtro params)
+      end
+      @semana = @atividades.group_by{|atividade|atividade.created_at.beginning_of_day}.keys
+      @programadores = Programador.all
+    else
+      @atividades = Atividade.unscoped.where("false")
+      @semana = []
+    end
+#    @atividades = Atividade.joins(:projeto).where(filtro params)
+#    @semana = @atividades.group_by{|atividade|atividade.created_at.beginning_of_day}.keys
     @programadores = Programador.all
   end
   def filtro params
