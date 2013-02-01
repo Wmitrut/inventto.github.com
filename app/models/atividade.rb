@@ -1,7 +1,11 @@
 class Atividade < ActiveRecord::Base
   attr_accessible :descricao, :projeto_id, :horas
 
-  scope :do_usuario, lambda {|user_id| joins(:projeto).joins("join clientes on clientes.id=projetos.cliente_id").joins("join clientes_users on clientes_users.cliente_id=clientes.id").where("user_id = ?", user_id) }
+  scope :do_cliente, lambda {|cliente_id| all(:include => :projeto, :conditions => ["projetos.cliente_id = ?", cliente_id])}
+  scope :do_projeto, lambda {|projeto_id| where "atividades.projeto_id = ?", projeto_id}
+  scope :do_programador, lambda {|programador_id| all(:include => :horas, :conditions => ["horas.programador_id = ?", programador_id])}
+  scope :do_dia, lambda {|data| entre data, data+1.day}
+  scope :entre, lambda {|de,ate| where "atividades.created_at between ? and ?", de, ate}
 
   belongs_to :projeto
   has_many :horas

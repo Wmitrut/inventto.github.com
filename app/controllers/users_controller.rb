@@ -3,9 +3,9 @@ class UsersController < ApplicationController
     def verifica_usuario
       if id = session[:user_id]
         user = User.find id
-        if user.developer
+#        if user.developer
           return
-        end
+#        end
       end
       flash[:error] = 'Acesso nao permitido!'
       redirect_to :root
@@ -15,5 +15,6 @@ class UsersController < ApplicationController
   active_scaffold :user do |conf|
     conf.columns.exclude :uid, :provider
     conf.list.columns.exclude :uid, :provider
+    conf.columns[:projetos].form_ui = :select
   end
 end

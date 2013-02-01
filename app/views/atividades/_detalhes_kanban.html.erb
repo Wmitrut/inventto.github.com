@@ -1,5 +1,5 @@
 <ul>
-  <% @atividades_kanban.group_by(&:projeto).each do |projeto, atividades| %>
+  <% @atividades.group_by(&:projeto).each do |projeto, atividades| %>
     <li>
       <%= projeto.nome %> -
       <%= projeto.cliente.nome rescue "" %>

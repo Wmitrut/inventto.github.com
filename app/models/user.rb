@@ -1,17 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :nome, :uid, :provider, :image, :developer, :clientes
+  attr_accessible :nome, :uid, :provider, :image, :developer
 
-  has_and_belongs_to_many :clientes
-
-  has_many :projetos, :through => :clientes
-
-  def clientes
-    if developer
-      Cliente.all
-    else
-      super
-    end
-  end
+  has_and_belongs_to_many :projetos
+  has_many :atividades, :through => :projetos
 
   def self.from_omniauth(auth)
     user = find_by_provider_and_uid(auth["provider"], auth["uid"]) || create_with_omniauth(auth)
