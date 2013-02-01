@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   active_scaffold :user do |conf|
-    conf.columns.exclude :uid, :provider
+    conf.columns.exclude :uid, :provider, :atividades
     conf.list.columns.exclude :uid, :provider
     conf.columns[:projetos].form_ui = :select
   end

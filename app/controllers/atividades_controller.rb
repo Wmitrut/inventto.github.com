@@ -78,6 +78,7 @@ class AtividadesController < ApplicationController
     redirect_to :root
   end
   def apenas_projetos_do_cliente
+    return if not params[:projeto_id] or user.developer
     if not user.projetos.find params[:projeto_id]
       redirect_to :root, ACESSO_NEGADO
     end

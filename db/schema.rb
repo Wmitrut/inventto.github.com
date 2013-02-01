@@ -39,18 +39,18 @@ ActiveRecord::Schema.define(:version => 20130201172441) do
 
   create_table "programadores", :force => true do |t|
     t.string   "nome"
-    t.text     "descricao"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "descricao"
   end
 
   create_table "projetos", :force => true do |t|
     t.string   "nome"
     t.decimal  "valor_hora"
-    t.text     "descricao"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "cliente_id"
+    t.text     "descricao"
   end
 
   create_table "projetos_users", :force => true do |t|

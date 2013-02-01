@@ -22,11 +22,7 @@ module ApplicationHelper
     messages.html_safe
   end
   def clientes_visiveis
-    if is_user_developer?
-      Cliente.all
-    else
-      Cliente.do_usuario user_id
-    end
+    Cliente.all
   end
   def user_id
     session[:user_id]
