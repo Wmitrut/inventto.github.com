@@ -6,16 +6,21 @@ class AtividadesController < ApplicationController
   end
   def lancar
     if user and not user.developer
-      redirect_to :root, :error => 'Acesso nao permitido!'
+      redirect_to :root, :error => ACESSO_NEGADO
     end
   end
   def create
     @atividade = Atividade.new :descricao => params[:atividade][:descricao], :projeto_id => params[:projeto]
-    @atividade.horas.build :programador_id => params[:programador_1], :quantas => params[:atividade][:horas_1]
-    @atividade.horas.build :programador_id => params[:programador_2], :quantas => params[:atividade][:horas_2]
-    if @atividade.save
+    if horas_1 = params[:atividade][:horas_1] and horas_1 != ""
+      @atividade.horas.build :programador_id => params[:programador_1], :quantas => horas_1
+    end
+    if horas_2 = params[:atividade][:horas_2] and horas_2 != ""
+      @atividade.horas.build :programador_id => params[:programador_2], :quantas => horas_2
+    end
+    if (horas_1 != "" or horas_2 != "") and @atividade.save
       redirect_to '/atividades/ver'
     else
+      flash[:error] = 'Programadores sem horas!'
       render 'lancar'
     end
   end

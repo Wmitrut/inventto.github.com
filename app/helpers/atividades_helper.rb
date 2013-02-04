@@ -7,7 +7,11 @@ module AtividadesHelper
     horas = 0;
     atividades.each do |atividade|
       atividade.horas.each do |hora|
-        horas = horas + hora.quantas   
+        quantas = hora.quantas
+        if hora.quantas == nil
+          quantas = 0
+        end
+        horas = horas + quantas
       end
     end
     return horas;
