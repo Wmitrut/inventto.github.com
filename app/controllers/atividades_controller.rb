@@ -11,16 +11,15 @@ class AtividadesController < ApplicationController
   end
   def create
     @atividade = Atividade.new :descricao => params[:atividade][:descricao], :projeto_id => params[:projeto]
-    if horas_1 = params[:atividade][:horas_1] and horas_1 != ""
+    if horas_1 = params[:atividade][:horas_1] and not horas_1.blank? and horas_1.to_f > 0
       @atividade.horas.build :programador_id => params[:programador_1], :quantas => horas_1
     end
-    if horas_2 = params[:atividade][:horas_2] and horas_2 != ""
+    if horas_2 = params[:atividade][:horas_2] and not horas_2.blank? and horas_2.to_f > 0
       @atividade.horas.build :programador_id => params[:programador_2], :quantas => horas_2
     end
-    if (horas_1 != "" or horas_2 != "") and @atividade.save
+    if @atividade.save
       redirect_to '/atividades/ver'
     else
-      flash[:error] = 'Programadores sem horas!'
       render 'lancar'
     end
   end
