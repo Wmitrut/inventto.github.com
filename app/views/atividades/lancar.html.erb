@@ -2,8 +2,8 @@
 <form action="/atividades/create" method="POST">
   <% if @atividade and not @atividade.valid? %>
     <ul>
-      <% @atividade.errors.full_messages.uniq.each do |msg| %>
-        <li><%= msg %></li>
+    <% @atividade.errors.full_messages.uniq.each do |msg| %>
+      <li><strong><%= msg %></strong></li>
       <% end %>
     </ul>
   <% end %>
