@@ -96,7 +96,7 @@
     <div class="side">
       <div class="title">Projetos Atuais</div>
       <div id="projetos_accordion">
-        <% $projetos.each do |projeto| %>
+        <% @todos_projetos.each do |projeto| %>
           <div class="projeto"><%= projeto.nome.upcase %></div>
           <div class="descricao"><%= projeto.descricao %></div>
         <% end %>

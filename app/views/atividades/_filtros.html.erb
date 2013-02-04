@@ -1,6 +1,6 @@
 <form action="<%= @action %>" method="POST">
   <label for="cliente">Cliente:</label>
-  <%= select_tag "cliente", options_from_collection_for_select(Cliente.all, :id, :nome, params[:cliente]),:prompt => "Selecione" %>
+  <%= select_tag "cliente", options_from_collection_for_select(clientes_visiveis, :id, :nome, params[:cliente]),:prompt => "Selecione" %>
   <label for="projeto">Projeto:</label>
   <script type="text/javascript">
     carregar_projetos = function() {
@@ -29,5 +29,3 @@
 
 <input type="submit" value="Filtrar"/>
 </form>
-
-

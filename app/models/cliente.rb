@@ -1,7 +1,5 @@
 class Cliente < ActiveRecord::Base
-  attr_accessible :nome, :users
-
-  has_and_belongs_to_many :users
+  attr_accessible :nome
 
   def label
    nome
