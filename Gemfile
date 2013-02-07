@@ -11,6 +11,8 @@ gem 'omniauth-google-oauth2'
 gem "brazilian-rails"
 gem 'activerecord-postgresql-adapter'
 
+gem "capistrano", :group => :development
+
 #gem 'jruby-openssl'
 
 # Gems used only for assets and not required
