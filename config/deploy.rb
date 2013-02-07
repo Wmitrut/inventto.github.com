@@ -1,4 +1,4 @@
-#require "rvm/capistrano"
+require "rvm/capistrano"
 require 'bundler/capistrano'
 
 set :rvm_bin_path, "/usr/local/rvm/bin"
