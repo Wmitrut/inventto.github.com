@@ -1,0 +1,18 @@
+ #!/bin/sh
+
+. ./script/env/ruby_env
+
+if [ -e '.rvmrc.local' ]; then
+ . .rvmrc.local;
+elif [ -e '.rvmrc_custom' ] ; then
+ . .rvmrc_custom;
+else
+ if rvm list strings | grep -q "" ; then
+   rvm --create use @
+ else
+   printf "\e[00;31mPLEASE INSTALL RUBY  WITH `rvm install `"
+   return 1
+ fi
+fi
+
+. ./script/env/ensure_right_rubygems
