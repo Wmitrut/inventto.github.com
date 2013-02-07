@@ -10,6 +10,7 @@ set :rvm_type, :system
 set :rails_env,                  "production"
 set :user,                       "root"
 set :scm,        :git
+set :normalize_asset_timestamps, false
 set :repository, "git@github.com:inventto/#{application}.git"
   set :branch,     "master"
 
