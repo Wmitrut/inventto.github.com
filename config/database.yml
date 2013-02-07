@@ -18,3 +18,5 @@ test:
 production:
   adapter: postgresql
   database: inventto_production
+  username: inventto
+  password: ''
