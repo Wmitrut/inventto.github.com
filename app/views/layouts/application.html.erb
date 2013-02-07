@@ -23,7 +23,7 @@ _gaq.push(['_trackPageview']);
     <%= render :partial => "menu" %>
     <div id="logo">
       <div class="login">
-        Bem Vindo <%= (n=session[:user_name]) ? ", " + n.to_s : "a Invent.to" %>
+        Bem vindo <%= (n=session[:user_name]) ? ", " + n.to_s : "a Invent.to" %>
       <img class="login_img" src="<%= session[:user_picture] %>" />
       </div>
       <div class="inventto"> <a href="/">invent</a>.to </div>
