@@ -25,8 +25,8 @@ namespace :deploy do
   task :start  do
     run "cd #{current_path} && bundle exec thin start -p 3333 -e production -d"
   end
-#  after 'deploy:update_code' do
-#     run "cd #{release_path}; RAILS_ENV=production rake assets:precompile"
-#  end
+  after 'deploy:update_code' do
+     run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
+  end
 end
 
