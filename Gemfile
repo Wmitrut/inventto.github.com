@@ -12,7 +12,7 @@ gem "brazilian-rails"
 gem 'activerecord-postgresql-adapter'
 
 gem "capistrano", :group => :development
-
+gem "rvm-capistrano"
 #gem 'jruby-openssl'
 
 # Gems used only for assets and not required
