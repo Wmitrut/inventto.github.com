@@ -24,15 +24,18 @@
   font-weight: 400;
   src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
 }
-* {
-color:white;
+*{
 font: 12px "Open Sans", Verdana, Arial;
+color:white;
 }
 body {
-background-color:rgb(150, 150, 150);
+background-color: #a19f9f;
 margin:0 0 100px;
 }
 #head {
+box-shadow: 0 0 10px black;
+-moz-box-shadow: 0 0 10px black;
+-webkit-box-shadow: 0 0 10px black;
 background-color:#000;
 height:85px;
 border-bottom: 2px solid white;
@@ -96,6 +99,7 @@ list-style:none;
 margin: 0 0 0 20px;
 }
 .menu ul li a {
+text-transform: uppercase;
 font:14px "Open Sans", Verdana, Arial;
 text-decoration:none;
 font-size: 17px;
@@ -133,6 +137,9 @@ padding: 20px;
 background: rgb(50, 50, 50) url(images/diagonal.png) top right no-repeat;
 }
 .extended {
+box-shadow: 0 0 10px black;
+-moz-box-shadow: 0 0 10px black;
+-webkit-box-shadow: 0 0 10px black;
 display:block;
 padding:20px;
 margin:20px 0;
@@ -172,7 +179,8 @@ transform: rotate(360deg) scale(1.419) skew(1deg) translate(0px);
 -ms-transform: rotate(360deg) scale(1.419) skew(1deg) translate(0px);
 }
 .left_info {
-font:30px "Anton", Verdana, Arial;
+text-transform: uppercase;
+font:44px "Anton", Verdana, Arial;
 padding:20px;
 float:left;
 margin: -20px 20px -20px -20px;
@@ -180,7 +188,8 @@ height:100%;
 }
 .left_info a,
 .right_info a {
-font:30px "Anton", Verdana, Arial;
+text-transform: uppercase;
+font:44px "Anton", Verdana, Arial;
 color:rgb(10, 200, 40);
 display:block
 }
@@ -190,6 +199,7 @@ float:left;
 padding:20px;
 }
 .title {
+text-transform: uppercase;
 font:30px "Anton", Verdana, Arial;
 color:rgb(10, 200, 40);
 border-bottom: 1px solid white;
@@ -242,26 +252,25 @@ border:none;
   position: absolute;
   font: normal normal normal 14px/1.3em Helvetica, Arial, sans-serif;
   Vertical-align: baseline;
-  margin-top:30px;
-  margin-left: 20px;
+  margin-top:40px;
   text-transform: uppercase;
 }
 .ui-accordion .ui-accordion-header{ /* Cabeçalho: onde exibe o nome do projeto */
   background: transparent;
 }
 .ui-accordion .ui-accordion-content-active { /* onde exibe a descrição do projeto */
-  background: #323232;
+  background: #4f4e4e;
   color: white;
 }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { /* quando está selecionado */
-  border: 1px solid #646464;
+  border: 1px solid #727171;
 }
 .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {/*quando passa o mouse*/
-  border: 1px solid #646464;
+  border: 1px solid #727171;
   color: rgb(51,255,0);
 }
 .ui-widget-content, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  border: 1px solid #646464;
+  border: 1px solid #727171;
 }
 .ui-state-active .ui-icon, .ui-state-default .ui-icon {
   background-image: url(ui-icons_ffffff_256x240.png);
