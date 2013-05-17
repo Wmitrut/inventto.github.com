@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'thin'
 gem 'rails', '3.2.8'
-gem 'active_scaffold'
+#gem 'active_scaffold'
 gem 'brdinheiro'
 gem 'markdown'
 gem 'rdiscount'
@@ -11,6 +11,10 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem "brazilian-rails"
 gem 'activerecord-postgresql-adapter'
+gem 'jquery-rails', '~> 2.0.0'
+gem 'refinerycms', '~> 2.0.0'
+gem 'unicorn'
+gem 'unicorn-rails'
 
 gem "capistrano", :group => :development
 gem "rvm-capistrano"
@@ -19,7 +23,7 @@ gem "rvm-capistrano"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails',   '~> 3.2.3' 
   gem 'coffee-rails', '~> 3.2.1'
   gem 'twitter-bootstrap-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -28,7 +32,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+#gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

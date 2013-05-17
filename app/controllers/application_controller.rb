@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
       end
     end
     def carregar_todos_projetos
-      @todos_projetos = Projeto.all
+      #@todos_projetos = Projeto.all
+      @todos_projetos_ativos = Projeto.order("name ASC").where("status = 1 AND name NOT LIKE '*%'") # 1 são os projetos ativos
     end
 end

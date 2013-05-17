@@ -8,15 +8,25 @@
 <%= javascript_include_tag :defaults %>
 </head>
 <body>
-  <script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-38318580-1']);
-_gaq.push(['_trackPageview']);
-(function() {
- var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
- var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#projetos_accordion").accordion({
+       collapsible: true, 
+       active: false,
+       alwaysOpen: false,
+       animated: 'bounceslide',
+       heightStyle: "content",
+       event: 'click hoverintent' /* or mouseover */
+    });
+  });
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38318580-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+   })();
 </script>
 <div id="head">
   <div class="fix_width">
@@ -34,7 +44,31 @@ _gaq.push(['_trackPageview']);
 <%= flash_message %>
 <div id="body" class="fix_width">
   <div class="slide_show"></div>
-  <%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <div class="extended">
+    <div class="fix_width">
+      <div class="left_info">
+        <a>DESENVOLVEMOS</a>
+        O SEU INVENTO
+      </div>
+      <div class="right_info">
+        <a>SOLICITE</a>
+        AGORA MESMO
+      </div>
+    </div>
+  </div>
+  <i style="margin: 140px"></i>
+  <div class="side">
+    <div class="title">Quem somos nós</div>
+  </div>
+  <div class="side">
+    <div class="title">O que fazemos</div>
+  </div>
+  <div class="side">
+    <div class="title">O que não fazemos</div>
+  </div>
   <i></i>
 </div>
 <div class="container">
@@ -42,7 +76,7 @@ _gaq.push(['_trackPageview']);
     <div class="side">
       <div class="title">Projetos Atuais</div>
       <div id="projetos_accordion">
-        <% @todos_projetos.each do |projeto| %>
+        <% @todos_projetos_ativos.each do |projeto| %>
           <div class="projeto"><%= projeto.nome.upcase %></div>
           <div class="descricao"><%= projeto.descricao %></div>
         <% end %>
