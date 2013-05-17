@@ -1,10 +1,13 @@
-Invent.to é uma equipe de desenvolvimento de sistemas computacionais, que possui habilidades para desenvolvimento de uma ampla gama de soluções, incluindo software para o mercado financeiro, aplicativos móveis Android, sites e sistemas para internet.
+"Invent.to" é uma equipe de desenvolvimento de sistemas computacionais, que possui habilidades para desenvolvimento de uma ampla gama de soluções, incluindo software para o mercado financeiro, aplicativos móveis Android, como jogos e sistemas para controles, sites e sistemas para internet.
 
-Somos uma equipe de profissionais de TI altamente qualificados, experientes, capazes de gerenciar projetos com autonomia e responsabilidade.
+Somos uma equipe de profissionais de TI altamente qualificados, experientes, capazes de gerenciar projetos com autonomia, responsabilidade e eficiência.
 
-Nossa equipe inclui especialistas em Java, Ruby, Android, Web, C, [trabalhando](/work) com a metodologia XP (eXtreme Programming) desenvolvendo produtos de qualidade e **livre de erros** (o trabalho em dupla .....).
+Nossa equipe inclui especialistas em Java, Ruby, Android, Web, C, [trabalhando](/work) com a metodologia XP (eXtreme Programming) desenvolvendo produtos de qualidade e **livre de erros**.
 
-Acreditamos em transformar seus invent.tos em um negócio lucrativo, adicionando valores a ele.
+O trabalho em dupla nos fornece maior agilidade, versatilidade, segurança e qualidade em nossos trabalhos.
 
-    Desafio, inovação
-    Entre em contato.
+Podemos lhe ajudar a transformar os seus invent.tos em um negócio lucrativo, adicionando valores a ele.
+
+> **Desafio, inovação.**
+
+> **Entre em contato.**

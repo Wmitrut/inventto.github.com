@@ -1,20 +1,36 @@
 InventtoSite::Application.routes.draw do
 
-  resources :users do as_routes end
+  # This line mounts Refinery's routes at the root of your application.
+  # This means, any requests to the root URL of your application will go to Refinery::PagesController#home.
+  # If you would like to change where this extension is mounted, simply change the :at option to something different.
+  #
+  # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
+
+  mount Refinery::Core::Engine, :at => '/site/'
+
+  match "/nossos_clientes" => redirect("/site/clientes")
+  match "/s" => redirect("/site/inventos")
+  match "/res" => redirect("/site/inventores")
+  match "/sobre" => redirect("/site/sobre-page")
+  match "/" => redirect("/site/sobre-page")
+  match "/contato" => redirect("/site/contato-page")
 
   match "/auth/google_oauth2/callback", to: "sessions#create"
   match "/auth/failure", to: "sessions#failure"
   match "/logout", to: "sessions#destroy", :as => "logout"
 
-  resources :clientes do as_routes end
+  #resources :users do as_routes end
 
-  resources :programadores do as_routes end
+  #resources :clientes do as_routes end
 
-  resources :projetos do as_routes end
+  #resources :programadores do as_routes end
 
-#  match ':controller(/:action(/:id))(.:format)'
+  #resources :projetos do as_routes end
+
+  #match ':controller(/:action(/:id))(.:format)'
 
   get 'oauth/google'
+
   get "projetos/new"
 
   post "atividades/ver"
@@ -26,16 +42,19 @@ InventtoSite::Application.routes.draw do
   get "atividades/detalhes_kanban"
 
   get "atividades/kanban"
+
   post "atividades/kanban"
 
   get "atividades/carregar_projetos"
 
   get "atividades/lancar"
+
   post "atividades/create"
 
   get "site/index"
 
   match ':content' => "site#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
