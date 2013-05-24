@@ -27,6 +27,13 @@
 font: 13px "Open Sans", Helvetica, Verdana, Arial;
 color:white;
 }
+strong, b, h1, h2, h3 {
+font-weight: bold;
+}
+h2 {
+font:24px "Anton", Verdana, Arial;
+color:#13c339;
+}
 body {
 background-color: #aaa;
 margin:0 0 100px;
@@ -80,7 +87,7 @@ transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
 -ms-transform: rotate(5deg) scale(1.1) skew(0deg) translate(5px);
 }
 #body {
-margin: 20px auto;
+margin: 20px auto 0;
 background-color: #fff;
 padding: 20px;
 }
@@ -88,8 +95,10 @@ section#body {
 background-color: white;
 padding: 10px 20px;
 }
-section#body *,
-section#body p {
+section#body > .inner > *,
+section#body > .inner > * li,
+section#body > .inner p,
+section#body > .inner > * strong {
 color: black;
 }
 .container {
@@ -166,18 +175,20 @@ height:100%;
 .right_info a {
 text-transform: uppercase;
 font:44px "Anton", Verdana, Arial;
-color:#13c339;
+color:#13c339 !important;
 display:block
 }
 .side {
-width:270px;
+width:33.33%;
 float:left;
-padding: 0 20px;
+}
+.side * {
+padding: 0 5px;
 }
 .title {
 text-transform: uppercase;
-font:30px "Anton", Verdana, Arial;
-color:#13c339;
+font:28px "Anton", Verdana, Arial;
+color:#13c339 !important;
 border-bottom: 1px solid white;
 }
 .side span {
@@ -198,9 +209,6 @@ color:white;
 i {
 display:block;
 clear:both
-}
-.container .extended {
-border:none;
 }
 .projeto{
   margin-top: 5px;
