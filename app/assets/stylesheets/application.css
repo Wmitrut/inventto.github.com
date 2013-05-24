@@ -45,10 +45,10 @@ max-width:940px
 }
 #copyright {
   float: left;
-  margin-top: 1px;
+  margin-top: 8px;
 }
 .extended .menu {
-  margin-top: -13px;
+  margin-top: -4px;
 }
 .inventto {
 float: left;
@@ -78,47 +78,6 @@ transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
 -moz-transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
 -o-transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
 -ms-transform: rotate(5deg) scale(1.1) skew(0deg) translate(5px);
-}
-.menu {
-margin-top:45px;
-float:right;
-transition:All 1s ease;
--webkit-transition:All 1s ease;
--moz-transition:All 1s ease;
--o-transition:All 1s ease;
-transform: rotate(0deg) scale(0.799) skew(1deg) translate(3px);
--webkit-transform: rotate(0deg) scale(0.799) skew(1deg) translate(3px);
--moz-transform: rotate(0deg) scale(0.799) skew(1deg) translate(3px);
--o-transform: rotate(0deg) scale(0.799) skew(1deg) translate(3px);
--ms-transform: rotate(0deg) scale(0.799) skew(1deg) translate(3px);
-}
-.menu ul li {
-float:left;
-list-style:none;
-margin: 0 0 0 20px;
-}
-.menu ul li a {
-text-transform: uppercase;
-font:13px "Open Sans", Verdana, Arial;
-text-decoration:none;
-font-size: 17px;
-cursor:pointer;
-}
-.menu div {
-transition:All 0.3s ease;
--webkit-transition:All 0.3s ease;
--moz-transition:All 0.3s ease;
--o-transition:All 0.3s ease;
-}
-.menu div:hover {
-transform: rotate(0deg) scale(1.2) skew(1deg) translate(3px);
--webkit-transform: rotate(0deg) scale(1.2) skew(1deg) translate(3px);
--moz-transform: rotate(0deg) scale(1.2) skew(1deg) translate(3px);
--o-transform: rotate(0deg) scale(1.2) skew(1deg) translate(3px);
--ms-transform: rotate(0deg) scale(1.2) skew(1deg) translate(3px);
-}
-.menu a:hover {
-color:#13c339;
 }
 #body {
 margin: 20px auto;
@@ -327,3 +286,10 @@ border:none;
 .messages .notice-message{
   background: url(notice.ico) no-repeat 40px darkgreen;
 }
+.sf-menu { position: relative; margin: 0; padding: 0; list-style: none;clear:both; float: left; margin-top: 12px; padding-left: 9px; margin-bottom:	1em; /*background: url('/assets/menu_bg.png') no-repeat;*/ width: 957px; z-index: 400; }
+.sf-menu a { display: block; position: relative; text-decoration:none; color: #fff; padding: 1px 12px 0px 12px; height: 15px; text-decoration: none; text-shadow: 1px 1px 1px #000; font-weight: normal; float :left; }
+.sf-menu li { float: left; position: relative; font-family: Arial, Helvetica, sans-serif; /*background: url('/assets/menu_line.png') no-repeat;*/ background-position: right 5px; }
+.sf-menu li ul li ul { left: 212px; margin-top: 0px;}
+.sf-menu li a:hover { color: #78ff00; }
+ul.sf-menu li.backLava { position: absolute; z-index: 3; background: url('/assets/lavalamp.png') no-repeat; background-position: center 0px; padding: 0; height: 16px; margin-top: 15px; }
+.menu {float: right; width: 500px; margin-top: 46px;}
