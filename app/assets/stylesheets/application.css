@@ -300,4 +300,4 @@ clear:both
 .sf-menu li ul li ul { left: 212px; margin-top: 0px;}
 .sf-menu li a:hover { color: #78ff00; }
 ul.sf-menu li.backLava { position: absolute; z-index: 3; background: url('/assets/lavalamp.png') no-repeat; background-position: center 0px; padding: 0; height: 16px; margin-top: 15px; }
-.menu {float: right; width: 530px; margin-top: 45px;}
+.menu {float: right; width: 500px; margin-top: 45px;}
