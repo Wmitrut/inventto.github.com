@@ -1,6 +1,6 @@
 worker_processes 1
 
-listen 3333 
+listen 3333
 
 preload_app true
 
@@ -10,6 +10,3 @@ pid               '/var/www/apps/inventto/shared/pids/unicorn.pid'
 stderr_path       '/var/www/apps/inventto/shared/log/unicorn.error.log'
 stdout_path       '/var/www/apps/inventto/shared/log/unicorn.out.log'
 working_directory '/var/www/apps/inventto/current'
-after_fork do |server, worker| 
-	ActiveRecord::Base.establish_connection 
-end
