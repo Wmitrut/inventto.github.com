@@ -8,13 +8,6 @@ InventtoSite::Application.routes.draw do
 
   mount Refinery::Core::Engine, :at => '/site/'
 
-  match "/nossos_clientes" => redirect("/site/clientes")
-  match "/s" => redirect("/site/inventos")
-  match "/res" => redirect("/site/inventores")
-  match "/sobre" => redirect("/site/sobre-page")
-  match "/" => redirect("/site/sobre-page")
-  match "/contato" => redirect("/site/contato-page")
-
   match "/auth/google_oauth2/callback", to: "sessions#create"
   match "/auth/failure", to: "sessions#failure"
   match "/logout", to: "sessions#destroy", :as => "logout"

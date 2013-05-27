@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'rack/rewrite'
 
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 #config.middleware.use OAuth::Rack::OAuthFilter
@@ -65,5 +66,15 @@ module InventtoSite
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+      # example rewrites
+      rewrite '/nossos_clientes', '/site/clientes'
+      rewrite '/s', '/site/inventos'
+      rewrite '/res', '/site/inventores'
+      rewrite '/sobre', '/site/sobre-page'
+      rewrite '/', '/site/sobre-page'
+    end
+    #
   end
 end
