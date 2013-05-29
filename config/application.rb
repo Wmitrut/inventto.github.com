@@ -75,7 +75,7 @@ module InventtoSite
       rewrite '/sobre', '/site/sobre'
       rewrite '/', '/site/sobre'
       rewrite '/depoimentos', '/site/depoimentos'
-      rewrite '/contato', '/site/contato-page'
+      rewrite '/contato', '/site/contato'
     end
     #
   end
