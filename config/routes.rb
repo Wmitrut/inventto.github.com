@@ -46,7 +46,7 @@ InventtoSite::Application.routes.draw do
 
   get "site/index"
 
-  match ':content' => "site#index"
+  #match ':content' => "site#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

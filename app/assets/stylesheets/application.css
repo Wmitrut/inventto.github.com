@@ -93,7 +93,6 @@ background-color: #fff;
 padding: 20px;
 }
 section#body {
-background-color: white;
 padding: 10px 20px;
 }
 section#body > .inner > *,
@@ -112,7 +111,7 @@ box-shadow: 0 0 10px black;
 -webkit-box-shadow: 0 0 10px black;
 }
 #body .container {
-background: #f8f8f8 url(images/diagonal.png) top right no-repeat;
+background: #f8f8f8;
 border: none;
 box-shadow: 0 0 10px #f8f8f8;
 -moz-box-shadow: 0 0 10px #f8f8f8;
