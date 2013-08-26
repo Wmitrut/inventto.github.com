@@ -1,12 +1,39 @@
- <div class="menu">
-      <ul class="sf-menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/nossos_clientes">Clientes</a></li>
-        <li><a href="/s">Invent.tos</a></li>
-        <li><a href="/res">Invent.tores</a></li>
-        <li><a href="/sobre">Sobre</a></li>
-        <li><a href="/depoimentos">Depoimentos</a></li>
-        <li><a href="/contato">Contato</a></li>
-      </ul>
-    </div>
+<script type="text/javascript">
+     $(document).ready(function(){
+            $(function() {
+                // Stick the #nav to the top of the window
+                var nav = $('#head');
+                var img = $('.inventto, .inventto a');
+                var navHomeY = 55;
+                var imgHomeY = 0;
+                var $w = $(window);
+                ajustarMenu = function() {
+                        var scrollTop =  $w.scrollTop();
+                        fontRatio = (110 - scrollTop) / 55;
+                        if (fontRatio < 1)
+                          fontRatio = 1;
+                        if (scrollTop > navHomeY) {
+                            scrollTop = navHomeY;
+                        }
+                        nav.css({
+                                top: "-"+scrollTop+"px"
+                            });
+                        img.css({fontSize: (24 * fontRatio) + "px", width: (100 * fontRatio) +"px", marginTop: (scrollTop/1.2)+"px"});
+                };
+                $w.scroll(ajustarMenu);
+                ajustarMenu();
+            });
+     });
+</script>
+<div class="menu">
+  <ul class="sf-menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="/nossos_clientes">Clientes</a></li>
+    <li><a href="/s">Invent.tos</a></li>
+    <li><a href="/res">Invent.tores</a></li>
+    <li><a href="/sobre">Sobre</a></li>
+    <li><a href="/depoimentos">Depoimentos</a></li>
+    <li><a href="/contato">Contato</a></li>
+  </ul>
+</div>
 

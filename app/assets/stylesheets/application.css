@@ -24,31 +24,34 @@
   src: local('Open Sans'), local('OpenSans'), url('http://themes.googleusercontent.com/static/fonts/opensans/v6/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff') format('woff');
 }
 *{
-font: 13px "Open Sans", Helvetica, Verdana, Arial;
-color:white;
+  font: 13px "Open Sans", Helvetica, Verdana, Arial;
+  color:white;
 }
 strong, b, h1, h2, h3 {
-font-weight: bold;
+  font-weight: bold;
 }
 h2 {
-font:24px "Anton", Verdana, Arial;
-color:#13c339;
+  font:24px "Anton", Verdana, Arial;
+  color:#13c339;
 }
 body {
-background-color: #aaa;
-margin:0 0 100px;
+  background-color: #aaa;
+  margin:0 0 100px;
 }
 #head {
-box-shadow: 0 0 10px black;
--moz-box-shadow: 0 0 10px black;
--webkit-box-shadow: 0 0 10px black;
-background-color:#000;
-height:85px;
-border-bottom: 2px solid white;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
+  background-color:#000;
+  position: fixed;
+  height:85px;
+  border-bottom: 2px solid white;
 }
 .fix_width {
-margin:0 auto;
-max-width:940px
+  margin:0 auto;
+  max-width:940px
 }
 #copyright {
   float: left;
@@ -59,137 +62,137 @@ max-width:940px
   margin-bottom: -2px;
 }
 .inventto {
-float: left;
-position: left;
-color:#13c339;
-font:51px "Anton", Verdana, Arial;
-padding:5px 0;
-width: 200px;
-transition:All 1s ease;
--webkit-transition:All 1s ease;
--moz-transition:All 1s ease;
--o-transition:All 1s ease;
-transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
--webkit-transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
--moz-transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
--o-transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
--transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
+  float: left;
+  position: left;
+  color:#13c339;
+  font:51px "Anton", Verdana, Arial;
+  padding:5px 0;
+  width: 200px;
+  transition: transform 1s ease;
+  -webkit-transition: transform 1s ease;
+  -moz-transition: transform 1s ease;
+  -o-transition: transform 1s ease;
+  transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
+  -webkit-transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
+  -moz-transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
+  -o-transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
+  -transform: rotate(0deg) scale(1.0) skew(0deg) translate(5px);
 }
 .inventto a {
-font:51px "Anton", Verdana, Arial;
-text-decoration: none;
+  font:51px "Anton", Verdana, Arial;
+  text-decoration: none;
 }
 .inventto:hover{
-text-decoration: underline;
-transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
--webkit-transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
--moz-transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
--o-transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
--ms-transform: rotate(5deg) scale(1.1) skew(0deg) translate(5px);
+  text-decoration: underline;
+  transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
+  -webkit-transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
+  -moz-transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
+  -o-transform: rotate(10deg) scale(1.1) skew(0deg) translate(5px);
+  -ms-transform: rotate(5deg) scale(1.1) skew(0deg) translate(5px);
 }
 #body {
-margin: 20px auto 0;
-background-color: #fff;
-padding: 20px;
+  margin: 20px auto 0;
+  background-color: #fff;
+  padding: 20px;
 }
 section#body {
-padding: 10px 20px;
+  padding: 10px 20px;
 }
 section#body > .inner > *,
 section#body > .inner > * li,
 section#body > .inner p,
 section#body > .inner > * strong {
-color: black;
+  color: black;
 }
 .container {
-background: #444;
-padding: 20px;
-border-top: 2px solid white;
-border-bottom: 2px solid white;
-box-shadow: 0 0 10px black;
--moz-box-shadow: 0 0 10px black;
--webkit-box-shadow: 0 0 10px black;
+  background: #444;
+  padding: 20px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
 }
 #body .container {
-background: #f8f8f8;
-border: none;
-box-shadow: 0 0 10px #f8f8f8;
--moz-box-shadow: 0 0 10px #f8f8f8;
--webkit-box-shadow: 0 0 10px #f8f8f8;
+  background: #f8f8f8;
+  border: none;
+  box-shadow: 0 0 10px #f8f8f8;
+  -moz-box-shadow: 0 0 10px #f8f8f8;
+  -webkit-box-shadow: 0 0 10px #f8f8f8;
 }
 #body_content_title {
-color: #13C339;
-font:24px "Anton", Verdana, Arial;
-text-transform: uppercase;
-margin: 0;
+  color: #13C339;
+  font:24px "Anton", Verdana, Arial;
+  text-transform: uppercase;
+  margin: 0;
 }
 .extended {
-box-shadow: 0 0 10px black;
--moz-box-shadow: 0 0 10px black;
--webkit-box-shadow: 0 0 10px black;
-display:block;
-margin:20px 0;
-position:absolute;
-left: 0;
-right: 0;
-background-color:black;
-clear:both;
-border-top: 2px solid #13c339;
-border-bottom: 2px solid #13c339;
+  box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
+  display:block;
+  margin:20px 0;
+  position:absolute;
+  left: 0;
+  right: 0;
+  background-color:black;
+  clear:both;
+  border-top: 2px solid #13c339;
+  border-bottom: 2px solid #13c339;
 }
 .extended .fix_width {
-max-width:900px
+  max-width:900px
 }
 .right_info {
-font:15px "Anton", Verdana, Arial;
-padding:20px 20px 30px;
-float:right;
-background-color: #4f4e4e;
-margin-right: -20px;
-transition:All 0.5s ease;
--webkit-transition:All 0.5s ease;
--moz-transition:All 0.5s ease;
--o-transition:All 0.5s ease;
-transform: rotate(360deg) scale(1) skew(1deg) translate(-2px);
--webkit-transform: rotate(360deg) scale(1) skew(1deg) translate(-2px);
--moz-transform: rotate(360deg) scale(1) skew(1deg) translate(-2px);
--o-transform: rotate(360deg) scale(1) skew(1deg) translate(-2px);
--ms-transform: rotate(360deg) scale(1) skew(1deg) translate(-2px);
+  font:15px "Anton", Verdana, Arial;
+  padding:20px 20px 30px;
+  float:right;
+  background-color: #4f4e4e;
+  margin-right: -20px;
+  transition:All 0.5s ease;
+  -webkit-transition:All 0.5s ease;
+  -moz-transition:All 0.5s ease;
+  -o-transition:All 0.5s ease;
+  transform: rotate(360deg) scale(1) skew(1deg) translate(-2px);
+  -webkit-transform: rotate(360deg) scale(1) skew(1deg) translate(-2px);
+  -moz-transform: rotate(360deg) scale(1) skew(1deg) translate(-2px);
+  -o-transform: rotate(360deg) scale(1) skew(1deg) translate(-2px);
+  -ms-transform: rotate(360deg) scale(1) skew(1deg) translate(-2px);
 }
 .right_info:hover {
-transform: rotate(355deg) scale(1.23) skew(1deg) translate(2px);
--webkit-transform: rotate(355deg) scale(1.23) skew(1deg) translate(2px);
--moz-transform: rotate(355deg) scale(1.23) skew(1deg) translate(2px);
--o-transform: rotate(355deg) scale(1.23) skew(1deg) translate(2px);
--ms-transform: rotate(355deg) scale(1.23) skew(1deg) translate(2px);
+  transform: rotate(355deg) scale(1.23) skew(1deg) translate(2px);
+  -webkit-transform: rotate(355deg) scale(1.23) skew(1deg) translate(2px);
+  -moz-transform: rotate(355deg) scale(1.23) skew(1deg) translate(2px);
+  -o-transform: rotate(355deg) scale(1.23) skew(1deg) translate(2px);
+  -ms-transform: rotate(355deg) scale(1.23) skew(1deg) translate(2px);
 }
 .left_info {
-text-transform: uppercase;
-font:44px "Anton", Verdana, Arial;
-padding:20px;
-float:left;
-margin: -20px 20px -20px -20px;
-height:100%;
+  text-transform: uppercase;
+  font:44px "Anton", Verdana, Arial;
+  padding:20px;
+  float:left;
+  margin: -20px 20px -20px -20px;
+  height:100%;
 }
 .left_info a,
 .right_info a {
-text-transform: uppercase;
-font:44px "Anton", Verdana, Arial;
-color:#13c339 !important;
-display:block
+  text-transform: uppercase;
+  font:44px "Anton", Verdana, Arial;
+  color:#13c339 !important;
+  display:block
 }
 .side {
-width:33.33%;
-float:left;
+  width:33.33%;
+  float:left;
 }
 .side * {
-padding: 0 5px;
+  padding: 0 5px;
 }
 .title {
-text-transform: uppercase;
-font:28px "Anton", Verdana, Arial;
-color:#13c339 !important;
-border-bottom: 1px solid white;
+  text-transform: uppercase;
+  font:28px "Anton", Verdana, Arial;
+  color:#13c339 !important;
+  border-bottom: 1px solid white;
 }
 .side span {
   color: #00FF00;
@@ -202,13 +205,13 @@ border-bottom: 1px solid white;
   text-decoration: underline;
 }
 .container .title {
-color:white;
+  color:white;
 }
 #footer {
 }
 i {
-display:block;
-clear:both
+  display:block;
+  clear:both
 }
 .projeto{
   margin-top: 5px;
@@ -245,7 +248,7 @@ clear:both
 }
 .ui-accordion .ui-accordion-content-active { /* onde exibe a descrição do projeto */
   color: white;
-  padding: 0 10px;
+  padding: 0 0 0 10px;
 }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { /* quando está selecionado */
   border: none;

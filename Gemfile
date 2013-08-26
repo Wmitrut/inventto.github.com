@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gem 'thin'
 gem 'rails', '3.2.8'
 gem 'rack-rewrite', '~> 1.2.1'

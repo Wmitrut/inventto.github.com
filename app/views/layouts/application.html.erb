@@ -70,7 +70,7 @@ if (gallery.size() > 0) {
       <div class="title">Projetos Atuais</div>
       <div id="projetos_accordion">
         <% @todos_projetos_ativos.each do |projeto| %>
-          <div class="projeto"><%= projeto.nome.upcase %></div>
+          <div class="projeto"><%= projeto.nome.upcase.gsub(/<(.*)>/,"<TOP-SECRET>") %></div>
           <div class="descricao"><%= projeto.descricao %></div>
         <% end %>
       </div>
