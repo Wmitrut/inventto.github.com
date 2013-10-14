@@ -64,9 +64,9 @@ body {
 .inventto {
   float: left;
   position: left;
-  color:#13c339;
-  font:51px "Anton", Verdana, Arial;
-  padding:5px 0;
+  color: #13c339;
+  font: 51px "Anton", Verdana, Arial;
+  padding: 5px 0;
   width: 200px;
   transition: transform 1s ease;
   -webkit-transition: transform 1s ease;
@@ -94,6 +94,9 @@ body {
   margin: 20px auto 0;
   background-color: #fff;
   padding: 20px;
+}
+#body.fix_width {
+  margin-top: 90px;
 }
 section#body {
   padding: 10px 20px;
