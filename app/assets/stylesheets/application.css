@@ -48,6 +48,7 @@ body {
   position: fixed;
   height:85px;
   border-bottom: 2px solid white;
+  z-index: 100;
 }
 .fix_width {
   margin:0 auto;
